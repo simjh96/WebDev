@@ -1,0 +1,32 @@
+html
+	예전
+		div
+	
+	시멘틱 웹기술
+		header
+		aside
+		footer
+
+블록/ 인라인
+	블록
+		부피가 있는 박스
+		대부분 태그
+		무조건 쌓임
+	인라인
+		부피가 없는 박스(문자)
+		적용하더라도 줄바꿈이 생기지 않는 태그
+		a, img, form관련, span, br, input(글자 관련)
+		무조건 inline(글자 수식)
+
+p tag
+	여기도 공백 적용 안됨
+	&nbsp
+	<br> break 사용
+
+tag
+	<hr> 수평 구분선
+
+id/ class
+	id : 좀 더 상위
+		class : 좀 더 차위
+		물론 둘이 같이 써도 됨

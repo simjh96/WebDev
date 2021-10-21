@@ -1,0 +1,69 @@
+html
+	예전
+		div
+	
+	시멘틱 웹기술
+		header
+		aside
+		footer
+
+블록/ 인라인
+	블록
+		부피가 있는 박스
+		대부분 태그
+		무조건 쌓임
+	인라인
+		부피가 없는 박스(문자)
+		적용하더라도 줄바꿈이 생기지 않는 태그
+		a, img, form관련, span, br, input(글자 관련)
+		무조건 inline(글자 수식)
+
+p tag
+	여기도 공백 적용 안됨
+	&nbsp : non breaking space
+	<br> break 사용
+
+tag
+	<hr> 수평 구분선
+
+id/ class
+	id : 좀 더 상위
+		class : 좀 더 차위
+		물론 둘이 같이 써도 됨
+table
+	
+	caption : 제목
+	thead, tbody, tfoot : 상단, 중단, 하단
+		tr : table row
+		td : table data
+			colspan="#"
+			rowspan="#"
+		
+Beautify
+	단축키 적용 : keyboard shortcuts
+		beautify selection : ctrl alt l
+			선택 영역 줄정렬
+
+vscode
+	tr>td*3>{3-$}	make tr>td*3>content
+	#sth : div id="sth" 박스 자동완성
+		id나 class는 꼭 정해줘야함
+
+live server
+	liveserver open = alt+l alt+o
+
+css
+	style
+		속성 : 값1 값2 값3;
+		float : 공중에 떠 있는거여서 
+		자리는 차지하는데 부모한테 속성들이 상속은 못함
+		border : 1px solid #000000;
+			h1 같은 block도 border 다 있다
+			border-bottom 같은것도 있음
+		margin : up-down left-right
+			auto : 반반 분배
+			한방향만 줄거면 margin-top: px
+			p, h1, .. 등등 기본 margin이 있어서 내부 tag의 기본 여백을 빼줘야 하는 경우도 있다
+		padding : 안쪽 margin
+		font-size : 
+		border-style : hr 같은거에 존재
