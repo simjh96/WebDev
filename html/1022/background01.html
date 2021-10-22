@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 속성</title>
+    <style>
+        body { background-image: url(bg5.png); background-repeat: no-repeat; background-position: 90% 90%; background-attachment: fixed;}
+
+        .block1, .block2, .block3, .block4, .block5, .block6 {width: 500px; border: 1px solid #000000; text-align: center; margin: 10px auto; height: 300px; padding: 10px;}
+
+        .block1 { background-color: burlywood;}
+        .block2 { background-image: url(bg1.png);}
+        .block3 { background-image: url(bg1.png); background-repeat: no-repeat; background-position: 100% 90%;}
+        .block4 { background-image: url(bg1.png); background-repeat: no-repeat; background-size: cover;}
+        .block5 { background-image: linear-gradient(45deg, blue, green);}
+        .block6 { background-image: radial-gradient(blue, green);}
+
+    </style>
+</head>
+<body>
+    <div class="block1">box1</div>
+    <div class="block2">box2</div>
+    <div class="block3">box3</div>
+    <div class="block4">box4</div>
+    <div class="block5">box2</div>
+    <div class="block6">box3</div>
+</body>
+</html>

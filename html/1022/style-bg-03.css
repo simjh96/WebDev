@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/* tag */
+/* div {border: 1px solid #302d2db0;} */
+/* ul {border: 1px dotted gray;} */
+/* li {border: 1px dotted gray;} */
+/* h1 {border: 1px dotted gray;} */
+/* h2 {border: 1px dotted gray;} */
+/* p {border: 1px dotted gray;} */
+ul {padding-left: 25px;}
+
+
+/* id */
+#wrap { width: 600px; margin: 0 auto;}
+#bg {width: 600px; height: 400px; background-image: url(apple02.jpg); background-size: cover; padding-top: 200px; box-sizing: border-box;}
+#infos {width: 600px;}
+
+
+/* class */
+.title {background-color: #302d2db0; height: 200px; padding-left: 30px;}
+.title h1 { padding-top: 50px; color: honeydew; margin: 0px;}
+.title p {color: yellow; margin-top: 20px;}
+.info {padding-left: 20px; border: 1px solid #302d2db0;}

@@ -1,0 +1,28 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Pen+Script&display=swap');
+
+/* tag */
+ul {border: 1px dashed #797474;}
+li {border: 1px dashed #797474;}
+table {border: 1px dashed #797474; border-collapse: collapse;}
+tr {border: 1px dashed #797474;}
+td {border: 1px dashed #797474;}
+th {border: 1px dashed #797474;}
+div {border: 1px dashed #797474;}
+h1 {border: 1px dashed #797474;}
+h2 {border: 1px dashed #797474;}
+h3 {border: 1px dashed #797474;}
+p {border: 1px dashed #797474;}
+
+/* id */
+#intro>h1 { font-family: 'Black Han Sans', sans-serif; font-variant: small-caps; text-shadow: 3px 3px 2px #302d2d; text-decoration: underline; }
+#intro>p { text-align: center; letter-spacing: 10px; text-transform: capitalize;}
+ul li { list-style: square;}
+#body>ul>li { list-style: none;}
+#title_1 { text-decoration-line: line-through; word-spacing: 10px; font-style: italic; color: blue;}
+
+
+
+
+/* class */
+.content

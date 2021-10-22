@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/* tag */
+/* div {border: 1px dashed #817070;}
+p {border: 1px dotted #817070;}
+h1 {border: 1px dotted #817070;} */
+body {background-image: url(bg5.png), linear-gradient(45deg, blue, white); background-repeat: no-repeat, no-repeat; background-attachment: fixed, scroll; background-position: 100% 50%, 0% 0%;}
+
+/* id */
+
+
+/* class */
+.box1, .box2, .box3 { background-size: 60px; background-image: url(bg2.jpg); border: 6px solid hotpink; width: 400px; margin: 30px auto; padding: 30px 70px; background-color: white;}
+.box1 { background-repeat: repeat-x; background-position: 0% 3%;}
+.box2 { background-repeat: no-repeat; background-position: 50% 50%;}
+.box3 { background-repeat: repeat-y; background-position: 97% 0%;}
+
+.title { margin: 0 auto;}

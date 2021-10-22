@@ -1,0 +1,107 @@
+
+margin : 애초에 객체의 width 를 안정해주면 나가리
+
+border : 두께 모양(solid) color
+
+style 반영법
+	inline 방식 : tag에 속성추가
+
+	내부(head) or 외부(.css) : 선택자(tag) {스타일 속성 : 속성 값}
+
+css 문법
+	/* 내용 */ : 주석
+	semi colon 필수
+		@charset "utf-8";
+			여기도 세미콜론 필요
+	외부파일에는 charset markup 필수
+
+		tag_parent tag_child
+		#id : unique
+		.class : repeatable
+
+export 하는법
+	<link rel="stylesheet" href="style.css">
+
+글꼴 관련
+	font
+		font-family : 글꼴(서버)
+		font-face : 글꼴(ttf 경로 잡아서)
+	text
+		text-decoration : underline
+		text-indent : 들여쓰기(첫글자)
+		line-height : 줄간격
+	spacing
+	align
+		justify(양 끝 정렬)
+
+	white space & text overflow & text-overflow ( 말줄임표 3종세트 )
+		nowrap(줄바꾸지마), hidden(넘치는거 가려), ellipsis(말줄임표로 바꿔)
+		text 실제 보유하는 객체에게 줘야함
+			ul 말고 ul 안의 li에게 줘야함
+	border radius = 50% == circle	
+	
+	list-style ~
+		bullet 모양 등
+dummy text
+	lorem
+
+depth 잡는법
+	> : 1 depth
+	\n : greedy depth
+		혼용 가능
+그룹 선택자
+	, : 선택자1, 선택자2
+
+배경 속성
+	background image
+		배경 pattern 반복
+			default 가 background-repeat : repeat
+		그라데이션(deg, col1, col2)
+		background-attachment
+			스크롤로 움직여도 배경은 고정
+
+url
+	넣고 싶을때는 url( src ) 사용
+
+escape
+	$ : process counter
+
+다중 속성 입력 방법
+	속성은 두번 선언 불가
+	먼저 박을 속성부터 ',' : 그룹 선택자로 모든 속성 전달
+		{image: i1, i2, 속성: 값1, 값2}
+
+compiler가 읽는 순서?
+
+margin
+	parameter 4개 : 시계방향으로 지정
+
+padding
+	말만 padding이지 박스가 커짐..(밀어냄)
+
+
+display
+	inline인지 block인지는 display의 속성임
+	inline tag라도 display로 강제로 block(너비 max) 이나 inline-block(너비 자식으로부터 상속)
+	으로 수정 가능
+
+margin 수직 겹침 현상
+	margin이 수직끼리 만나면 겹치는걸로 합의 되어 있음
+		근데 margin : 0px 이랑도 겹쳐서 겹칠수 밖에 없음
+		근데 겹치는 순간 해당 속성값이 부모에게 올라감
+		방지하려면 padding을 대신 쓰자
+	투명 테두리 사용하면 해결 가능
+		border : 1px solid transparant
+			근데 오글거림 생김
+	padding으로 대체하려 하면
+		사실 padding은 block이 커지는거임
+		이걸 막으려면 box-sizing으로 늘어나는거 막아야함
+
+div의 상속
+	width 는 부모 -> 자식 상속
+	height 는 자식 -> 부모 상속
+
+* 선택자
+	이름 없는거는
+		부모>이름 으로 선택
+
