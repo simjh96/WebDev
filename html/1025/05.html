@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clear::after {content: ""; display: block; clear: both;}
+
+        #wrap { width: 800px; margin: 0px auto;}
+        .header { background-color: aliceblue;}
+        .header h1 { margin: 0px; text-align: center;}
+        .header .menu { list-style: none; padding: 0px; width: 504px; margin: 0px auto;}
+        .header .menu li {float: left; border: 1px solid #333; width: 120px; height: 40px; text-align: center; line-height: 40px; margin: 2px;}
+        .header .menu li:hover {background-color: blue;}
+        .header .menu li a {color: brown; text-decoration: none;}
+        .header .menu li:hover a {color: aliceblue;}
+
+        .content { background-color: aquamarine; margin: 10px 0px;}
+        .content div { border: 1px solid red; height: 200px; float: left; width: 264.6666px;}
+        
+        .footer { background-color: bisque; text-align: center;}
+        .copy {background-color: #333;}
+        #copy {background-color: aliceblue;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="header">
+            <h1>LOGO</h1>
+            <ul class="menu clear">
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+            </ul>
+        </div>
+        <div class="content clear">
+            <div class="left">left</div>
+            <div class="center">center</div>
+            <div class="right">right</div>
+        </div>
+        <div class="footer">
+            <p class="copy" id="copy">copyright.</p>
+        </div>
+    </div>
+</body>
+</html>

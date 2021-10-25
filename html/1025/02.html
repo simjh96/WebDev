@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu { list-style-type: none; padding-left: 0px;}
+        .menu>li { display: inline-block; vertical-align: top; border: 1px solid #333; width: 120px; height: 35px; text-align: center; text-align: center;}
+        .menu li:hover {background-color: aqua;}
+        .menu li a {color: black; text-decoration: none;}
+        .submenu { list-style-type: none; padding-left: 0px; display: none;}
+        .submenu li { border: 1px solid #333;}
+        .submenu li:hover { background-color: aqua;}
+        .menu>li:hover .submenu {display: block;}
+
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="">menu1</a>
+            <ul class="submenu">
+                <li><a href="">sub1</a></li>
+                <li><a href="">sub2</a></li>
+                <li><a href="">sub3</a></li>
+                <li><a href="">sub4</a></li>
+                <li><a href="">sub5</a></li>
+            </ul>
+        </li>
+        <li><a href="">menu2</a></li>
+        <li><a href="">menu3</a></li>
+        <li><a href="">menu4</a></li>
+        <li><a href="">menu5</a></li>
+    </ul>
+</body>
+</html>

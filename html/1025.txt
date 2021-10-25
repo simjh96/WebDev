@@ -1,0 +1,95 @@
+박스 모델
+	콘텐츠 - 패딩 - 테두리 - 마진
+		패딩 테두리는 박스 크기를 키움
+		콘텐츠 박스 크기는 안변함
+		패딩이 내부 여백인 이유는 배경색이 같이 들어가기 때문
+
+	콘텐츠 크기는 오직 width hight 으로만 결정됨
+		아니면 box-sizing : boarder-box(원하는 마지노선) 으로 크기 제한
+			default 가 content-box 임
+
+	div는 너비 100% 인데
+	body는 너비 있음
+
+	옆으로 쌓고 싶으면 무조건 float으로 쌓아야함
+
+display
+	inline, block, inline block
+	inline :
+		가로로 쌓임
+		width & hight 없어짐
+		text 구조가 선행해서 그림의 중심으로 정렬되지 않음
+	inline block :
+		혼합 속성(inline인데 부피만 추가됨)
+		부피 & 가로로 쌓임
+		여전히 text 중심 정렬
+			vertical-align : baseline -> top
+				horizontal은 align 없음
+	none :
+		랜더링 자체를 안함
+			visibility: hidden <- 그냥 보이지만 않는것
+
+
+
+메뉴 공식
+	ul.class>li>a[속성값='']
+
+css 선택자
+	반응 선택자:
+		active: 누른순간
+		hover: 위에 커서 생기는 순간
+			개체:hover { - }
+
+높이 가운데 정렬
+	그런 기능 없음
+		line-height = box height 하면 편법으로 됨
+
+Css positioning
+	박스 배치
+		float
+			문제는 박스가 겹침
+			.box1 {float:left}
+			.box4 {clear:both}
+			나중에 flex 라는 기능 생김(반응형에서 많이 씀)
+	박스는 겹쳐도
+		컨텐츠는 서로 안겹침
+		그래서 float 해도 안겹쳐 보임
+
+		안겹치게 하려면 clear : none | left | right | both
+			float 속성을 무효화 시키는 속성
+			
+
+layer 짜기
+	수직으로 먼저 쌓고
+	wrap 잡아서 가운데 정렬 시켜
+
+	inline 중앙 정렬은 parent에서 text-align
+	block의 중앙 정렬은 당사자 margin 으로 정렬
+		이 경우 width 계산 해서 넣어줘야함
+
+	height width 고정으로 크기 잡고
+	밀려나는 부분은
+			자식들이 공중에 뜨면 부모박스는 자식의 height 상속 못받음
+			.clear::after {content display clear} 로 overflow 밀어 올려 넣기
+		`		class="이름 clear"
+				.clear 로 찾아짐
+	
+font와 width 관련은 자식에게 상속 됨
+
+우선순위
+	style sheet 파일 위치
+		!important
+		inline style sheet
+		내부 style sheet
+		외부 style sheet
+
+	선택자에 따른 우선순위		
+		id로 선택
+		class로 선택
+		tag로 선택
+		
+	depth 원리
+		depth 더 깊게 선택한 선택자가 우선
+		:nth-child() 포함(서수 선택자)
+	똑같은 선택자의 경우
+		중복되는 속성은 이전이 사라짐
