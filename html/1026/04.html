@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {padding: 0; margin: 0; line-height: 1;}
+        .clear::after {content: ""; display: block; clear: both;}
+
+        #wrap { border: 1px solid black;}
+        header {height: 100px; background-color: #ccc; border-bottom: 2px solid #333;}
+        .inner {width: 900px; height: 100px; margin: 0 auto; position: relative;}
+        header .logo {float: left; line-height: 100px;}
+        header nav {float: right;}
+
+        .menu { list-style: none;}
+        .menu li {width: 120px; height: 40px; float: left; border: 1px solid blue; margin-top: 30px; margin-left: 10px; text-align: center; line-height: 40px;}
+        .menu li:hover {background-color: skyblue; }
+        .menu li:hover a {color: white;}
+        .menu li a { text-decoration: none;}
+
+        main { width: 900px; margin: 10px auto; border: 1px solid red; position: relative;}
+        main section { border:1px solid blue; height: 100px; float: left;}
+        main section:nth-child(1) {width: 443px; margin-right: 10px; margin-bottom: 10px;}
+        main section:nth-child(2) {width: 443px;margin-bottom: 10px;}
+        main section:nth-child(3) {width: 291.34px; margin-right: 10px;}
+        main section:nth-child(4) {width: 291.34px; margin-right: 10px;}
+        main section:nth-child(5) {width: 291.337px;}
+
+        #banner {position:absolute; width: 100px; height: 200px; background-color: firebrick; left: 50%; top: 0; margin-left: 470px; margin-top: 110px;}
+
+        footer {height: 100px; background-color: #ccc; border-top: 2px solid #333; text-align: center;}
+        footer p {line-height: 100px;}
+        footer span {float: right; position: absolute; right: 0px; width: 50px; height: 50px; border-radius: 50%; text-align: center; line-height: 50px; top: 50%; margin-top: -25px;}
+        footer span:nth-child(2) {right: 80px; background-color: blue;}
+        footer span:nth-child(3) {right: 50px; background-color: red;}
+        footer span:nth-child(4) {right: 20px; background-color: white;}
+
+       .top { position: fixed; width: 50px; height: 50px; border-radius: 50%; bottom: 5%; right: 5%; background-color: deeppink; line-height: 50px; text-align: center; color: white;} 
+       .top a {text-decoration: none;}
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="inner">
+                <h1 class="logo">Logo</h1>
+                <nav>
+                    <ul class="menu clear">
+                        <li><a href="">menu01</a></li>
+                        <li><a href="">menu02</a></li>
+                        <li><a href="">menu03</a></li>
+                        <li><a href="">menu04</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="clear">
+            <section>box1</section>
+            <section>box2</section>
+            <section>box3</section>
+            <section>box4</section>
+            <section>box5</section>
+        </main>
+        <footer>
+            <div class="inner">
+                <p>copyright.</p>
+                <span>s</span>
+                <span>n</span>
+                <span>s</span>
+            </div>
+        </footer>
+        <div id="banner">quick</div>
+        <div class="top"><a href="#wrap">top</a></div>
+    </div>
+</body>
+
+</html>

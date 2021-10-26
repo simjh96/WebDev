@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        #wrap {width: 500px; border: 2px solid red; margin: 0px auto; height: 500px; position: relative;}
+        #wrap div {width: 100px; height: 100px; position: absolute;}
+        
+        .top {position: fixed; width: 50px; height: 50px; background-color: deeppink; border-radius: 50%; right: 50px; bottom: 100px;}
+
+        .box1 {background-color: blue; top: 0; left: 0;}
+        .box2 {background-color: burlywood; right: 0; bottom: 0;}
+        .box3 {background-color: cadetblue; left: 0; bottom: 0; margin: -50px 0 0 -50px;}
+        .box4 {background-color: chartreuse; top: 0; right: 0;}
+        .box5 {background-color: chocolate;}
+        .box5 {background-color: black;}
+    </style>
+</head>
+<body>
+    <div class="top">
+        top
+    </div>
+    <div id="wrap">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+        <div class="box6">box6</div>
+    </div>
+</body>
+</html>
