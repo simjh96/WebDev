@@ -1,68 +1,33 @@
-position 문법
-	퀵배너, top 버튼 등등...
-	static: position이 없다 -> 문서 흐름에 맞게, relative, absolute, fixed: 스크롤과 상관 x
-	parent 가 없는 block 박스는 브라우저 화면 전체에서 포지션 잡음
-		있으면 부모박스에서 잡음
-			그래서 부모박스에 relative 넣어줌
-		position 정하고 top, left, bottom 등으로 보내줌
-			음수좌표도 읽음
-	정렬 기준이 왼쪽 상단 꼭지점임(마이너스 마진으로 잡음)
+Position
+	base position 상속을 위해 parent 도 position을 잡아줘야함
+	position 주는 순간 height width 생김
 
-	position 속성 주면 float 처럼
-		너비 == contents box 되고
-		inline 이더라도 width height 가 생김
+선택자:조건
+	조건에 먼저 보고 선택자가 맞으면 가져
+	span:nth-child(2n) -> 짝수번째 tag들 중에 span 있으면 선택
 
-nth-child
-	부모 tag나 속성:nth-child(n) {}
-		부모 옆에 colon이 아니라 찾으려는 자식의 tag나 속성 옆에
-		근데 nth child가 p span span 순으로 되어 있으면 첫 span을
-		(1)이 아니라 (2)로 잡아줘야함
-	(2n) 형식으로 짝수만 지정할 수 도 있음
+float
+	해당 랜더링 순서에서 띄워줌
+	뒤에 순번은 빨려 올라갈수 있지만
+	앞에 순번은 이미 랜더링 돼서 안말려간다
 
-
-랜더링 먼저 되는 순서도 있나
-	박스는 위에서 부터 된다고 하셨는데
-
-시맨틱 태그(읽는사람 편하라고)
-	<tag> 인데 기능이 탑재된 tag (의미가 있는)
-	header, section, article, aside, footer,nav
+	항상 parent 수준에서 말려 올려줘야함
+		Block Formatting Context(border/ overflow hidden 등으로도 가능)
+			internal float, external floats, margin collapsing 처리
 
 href
-	안에 class 나 id 넣어도 됨 (top->#wrap)
+	class 나 id 넣어도 찾아감
 
-child 중에 100% 가 있으면
-	부모가 더 좁은 width를 가질 수 없다
+부모보다 더 넓은 width 를 가질 수 없다
 
 여백 삭제 후 시작
 	* {padding: 0; margin: 0;}
 
-a tag는
-	무조건 blue여서
-	parent에서 color 상속 못시켜주고
-	직접 가서 바꿔야함
+우선순위
+	default value가 가장 높다
+	anchor tag의 파란 글씨는 a tag까지 안들어가면 못고침
 
-margin 겹침 현상
-	두 layer 이상에서는 겹침 안됨
+모양상 설계보다 내용상 설계가 우수
 
-min-height: 100%;
-	height를 자식한테 상속 받지 말고 부모한테 100% 상속 받아
 
-parrelex
-	사진 하나당 page 하나 할당하고 fixed 랑 cover 씌워서 진행
-
-float는 먼저 랜더링된걸 침범하지는 않는다
-	나중에 랜더링 될게 해당 자리를 차지하게 된다
-	그냥 해당 자리에서 띄우는거다!
-
-모양상 설계보다 내용상 설계가 더 좋다
-
-마진 겹침 현상
-	Block Formatting Context 으로 해결 가능
-		border 넣던지
-		overflow hidden 넣던지
-
-new block formatting context will:
-
-contain internal floats.
-exclude external floats.
-suppress margin collapsing.
+	

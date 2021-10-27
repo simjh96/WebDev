@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="submit"], input[type="reset"] {color: white; display: inline-block; width: 100px; height: 60px; background-color: crimson; margin: 0 auto;}
+        .test {width: 100px; margin: 0 auto; display: inline-block;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <form action="">
+            <fieldset>
+                <legend>개인정보</legend>
+                <label for="name">이름</label><input id="name" type="text" autofocus><br>
+                <label for="pw">비밀번호</label><input id="pw" type="password" required>
+            </fieldset>
+            <fieldset>
+                <legend>지원분야</legend>
+                <input type="radio" name="field" id=""><span>1</span>
+                <input type="radio" name="field" id=""><span>2</span>
+                <input type="radio" name="field" id=""><span>3</span>
+            </fieldset>
+            <fieldset>
+                <legend>지원동기</legend><textarea name="motive"></textarea>
+            </fieldset>
+            <input type="submit">
+            <input type="reset">
+            <div class="test">df</div>
+        </form>
+    </div>
+</body>
+</html>
