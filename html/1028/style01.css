@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* width: 1000px green 상품 너비: 224 224 */
+
+* { margin: 0 0; padding: 0 0;}
+.clear::after {content: ""; display: block; clear: both;}
+
+#wrap {width: 1000px; margin: 0 auto;}
+h1 {text-align: center; margin: 60px 0;}
+li {float:left; width: 224px; margin-left: 76px; list-style-type: none; text-align: center;}
+
+li:nth-child(1) .imgbox { background-image: url(images/market/marke1.jpg);}
+li:nth-child(2) .imgbox { background-image: url(images/market/marke5.jpg);}
+li:nth-child(3) .imgbox { background-image: url(images/market/marke2.jpg);}
+.imgbox {height: 224px; border-radius: 50%; border: 3px solid green; box-sizing: border-box; 
+    background-position: center; background-repeat: no-repeat; background-size: cover; 
+    position: relative;}
+
+.icon {position: absolute; top: 3%; left: 3%; width: 25%; height: 25%; 
+    border-radius: 50% 50%; border: 2px solid green;
+    text-align: center; line-height: 54px; background-color: green; color: white; font-weight: 1000; font-size: 20px;}
+
+.detail {padding: 10px 0; height: 60px;}
+.price {padding: 20px 0;}
+.price span {font-size: 25px; font-weight: 1000;}
+
+
+.pink .imgbox {border-color: deeppink;}
+.pink .icon {background-color: deeppink; border-color: deeppink;}
+

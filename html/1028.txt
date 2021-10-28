@@ -1,0 +1,18 @@
+inline 인 경우 다음 블록 사이에 약간 공백이 생기게 랜더링됨 -> block으로 써
+
+요즘 경로 길게 잘 안잡음
+
+인접 선택자 +
+	form tag 중 check 된 항목 다음에 오는 .checkbox 선택시
+	.checked + .checkbox
+
+^ : 한계층 위 선택자
+
+:: 가상 공간
+
+컨텐츠 크기 규격 유지 필요하면 img
+나머지는 무조건 background
+
+
+cursor: pointer
+	hover 했을때 커서 모양 바뀌는 설정

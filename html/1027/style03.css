@@ -1,33 +1,35 @@
 @charset "utf-8";
-* {border: 1px dotted rgba(0, 0, 0, 0.192); margin: 0 0; padding: 0 0;}
+* { margin: 0 0; padding: 0 0;}
 .clear::after {content: ""; display: block; clear: both;}
 
 #wrap {width: 1000px; margin: 0 auto;}
 
-header { height: 400px; background-image: url(images/banner.jpg); background-repeat: no-repeat; background-size: cover;}
+header { height: 400px; background-image: url(images/banner.jpg); background-repeat: no-repeat; background-size: 100% 100%;}
 
 nav {width: 1000px; text-align: center; background-color:  #582582; margin: 0 auto;}
-nav li {display: inline-block; margin: 20px 10px;}
+nav li {display: inline-block; margin: 20px 20px;}
 nav li a { color: white; text-decoration: none; font-size: 20px;}
+nav li:hover a {color: aquamarine;}
 
 main h1 {display: block; width: 200px; margin: 20px auto; text-align: center; padding-top: 20px;}
+main h1 span {border-bottom: 1px solid black; padding-bottom: 3px;}
 
 main ul {width: 900px; margin: 0 auto;}
 
 main li {float: left; width: 250px; margin-left: 36.5px; list-style-type: none;}
-main li .imgbox {height: 250px; background-repeat: no-repeat; background-size: cover; position: relative;}
+main li .imgbox {height: 250px; background-repeat: no-repeat; background-size: cover; position: relative; background-position: center;  border: 2px solid #582582;}
 main li:nth-child(1) .imgbox {background-image: url(images/pro3.jpg);}
 main li:nth-child(2) .imgbox {background-image: url(images/pro4.jpg);}
 main li:nth-child(3) .imgbox {background-image: url(images/pro5.jpg);}
 
 main li .imgbox span {position: absolute; top: 0; right: 0; height: 20px; width: 40px; background-color:  #582582; text-align: center; line-height: 20px;  font-size: 20px; color: white;}
 
-main li .btn {height: 60px; width: 250px; margin: 20px auto; background-color:  #582582;  font-size: 20px; color: white;}
+main .btn {height: 60px; width: 250px; margin: 20px auto; background-color:  #582582;  font-size: 20px; color: white; border: none;}
+main .btn:hover {color: aquamarine;}
 
 main p {display: block; width: 250px; margin: 30px auto; text-align: center;  font-size: 20px; color: #582582;}
 
-main .add_btn { display: block; width: 250px; height: 60px; margin: 30px auto; text-align: center; background-color: #f4675e;  font-size: 20px; color: white;}
-/* 이거 add btn .add 로 안불러지는지??? */
+main .add { display: block; margin: 30px auto; text-align: center; background-color: #f4675e; border-radius: 10px; box-shadow: 5px 5px 3px #333;}
 
 footer {height: 80px; text-align: center; line-height: 80px; background-color: #582582; font-size: 20px; color: white;}
 

@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* * {border: 1px dotted red;} */
+body, h1, h2, h3, h4, h5, h6, p, ul, li, ol, dl, dt, dd { margin: 0; padding: 0;}
+a { text-decoration: none; color: #333;}
+ul, li {list-style-type: none;}
+.clear::after {content: ""; display: block; clear: both;}
+
+header {width: 1130px; height: 100px; margin: 0 auto;}
+main {width: 1130px; height: 100px; margin: 0 auto;}
+
+footer {background-color: #fafbfc; border-top: 1px solid #e4e8eb;}
+footer .inner {width: 1130px; margin: 0 auto; box-sizing: border-box; padding: 30px 30px;}
+footer section {float: left; width: 320px; margin-right: 45px;}
+footer section:nth-child(3) {margin-right: 0;}
+
+footer .imgbox {float: left; width: 160px; height: 86px; margin-right: 5px;}
+footer section:nth-child(1) .imgbox { background-image: url(images/naver/naver01.jpg); background-position: center; background-size: cover;}
+footer section:nth-child(2) .imgbox { background-image: url(images/naver/naver02.jpg); background-position: center; background-size: cover;}
+footer section:nth-child(3) .imgbox { background-image: url(images/naver/naver03.jpg); background-position: center; background-size: cover;}
+
+footer .txtbox {float: right;}
+footer h5 {font-size: 12px; color: #58c464;}
+footer h3 {font-size: 13px; margin: 5px 0;}
+footer p {font-size: 12px; color: #242424; line-height: 1.7;}
