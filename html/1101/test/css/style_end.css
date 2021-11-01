@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+body, ul, li, ol, h1, h2, h3, h4, p { margin: 0; padding: 0; }
+a { text-decoration: none; color: #333; }
+ul { list-style: none; }
+div, section, header, footer, aside { box-sizing: border-box; }
+.clear::after { content: ""; clear: both; display: block; }
+
+/* div, header, footer, section { border: 1px solid red; } */
+
+#wrap { width: 1200px; margin: 0 auto; }
+header { height: 100px; }
+header .logo { float: left; margin-top: 35px; line-height: 0; }
+header nav { float: right; }
+.main_menu { margin: 30px 30px 0 0; }
+.main_menu>li { float: left; width: 200px; height: 40px;
+                background-color: darkorange;
+                font-size: 18px; text-align: center;
+                line-height: 40px; position: relative; }
+.main_menu>li:hover { background-color: #ff6600; }
+.main_menu>li>a { color: #fff; }
+.main_menu>li:hover .sub_menu { display: block; }
+
+.sub_menu { position: absolute; left: 0; top: 40px; 
+            width: 100%; display: none; z-index: 5;  }
+.sub_menu>li { background-color: #999; }
+.sub_menu>li:hover { background-color: #777; }
+.sub_menu>li>a { color: #fff;}
+
+#slider { height: 300px; position: relative; overflow: hidden; }
+.slideBox { width: 3600px; position: absolute; left: 0px; top: 0; }
+.slideBox li { width: 1200px; float: left; position: relative; }
+.slideBox li img { width: 100%; }
+.slideBox li .slide_title { position: absolute; left: 50%; top: 50%;
+                            width: 500px; height: 50px; 
+                            border-radius: 30px; 
+                            background-color: rgba(255,132,0,0.8);
+                            color: #fff; z-index: 5;
+                            text-align: center; line-height: 50px;
+                            margin: -25px 0 0 -250px; }
+#content { height: 200px; padding-top: 10px; }
+#content section { width: 370px; height: 180px; float: left; }
+
+.tabmenu {}
+.tabmenu .tab_title { height: 31px; 
+                      border-bottom: 2px solid orangered; }
+.tabmenu .tab_title a { width: 120px; height: 30px; 
+                        display: block; float: left; 
+                        background-color: #999; color: #fff;
+                        text-align: center; line-height: 30px; }
+.tabmenu .tab_title a.on { background-color: orangered; }
+.tabmenu .tab_con {}
+.tabmenu .tab_con ul { margin-top: 10px; }
+.tabmenu .tab_con .notice {}
+.tabmenu .tab_con .notice li { font-size: 13px; color: #222328; 
+                               line-height: 1.8; 
+                               border-bottom: 1px solid #ccc; }
+.tabmenu .tab_con .notice li span { float: right; }
+.tabmenu .tab_con .gallery { text-align: center; display: none; }
+.tabmenu .tab_con .gallery li { display: inline-block; margin: 10px; }
+.banner { margin: 0 40px; }
+.quick {}
+.sub_title { width: 120px; height: 30px; background-color: orangered;                text-align: center; line-height: 30px; color: #fff;
+             font-weight: normal; font-size: 16px; }
+.imgbox { border-top: 2px solid orangered; text-align: center; }
+.imgbox img { margin-top: 15px; }
+
+footer { height: 100px; padding: 20px 0; border-top: 2px solid orange; }
+footer .btm_logo { float: left; }
+footer .copy { float: left; text-align: center; 
+               width: 900px; color: #555; }
+footer .sns { float: right; }
+footer .sns li { display: inline-block; }
+footer .sns li img { width: 30px; margin-left: 10px; }
+
+#popup_bg { position: fixed; left: 0; top: 0; right: 0; bottom: 0; 
+            background-color: rgba(0,0,0,0.8); z-index: 10; 
+            display: none; }
+.modal { width: 420px; height: 400px; margin: 100px auto; 
+         background-color: #fff; padding: 40px; position: relative; }
+.popup_title { color: orange; border-bottom: 2px solid orange;
+               padding-bottom: 20px; }
+.popup_txt { line-height: 2; margin-top: 20px; }
+.close { position: absolute; right: 40px; bottom: 30px; border: 0;
+         padding: 8px 20px; background-color: orange; color: #fff; }
+.close:hover { background-color: orangered; }
+
+
+
+

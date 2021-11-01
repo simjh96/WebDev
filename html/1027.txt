@@ -1,0 +1,72 @@
+position
+	block formating context 로 정리 안됨
+	따로 떠있음 -> parent로 부터 완전 독립
+
+속성
+	method
+		get: open
+		post: 숨겨서
+	name(form name)
+	action
+	target(a tag랑 비슷)
+	
+form tag
+	label
+	fieldset: 영역, 단락
+		legend: 주석
+
+	input
+		hidden(사용자에게 보이지 않지만 서버로 넘겨지는값)
+		text
+		button
+css
+	input[type="search"]:focus {커서 들어갔을때}
+
+<body>
+	<form action="서버주소.php" method="get">
+		<input type="search" title="검색">
+		<input type="submit" value="버튼에 붙을 이름">
+
+다 inline이라서
+	ul li 로 만듬
+
+label과 input 묶는법
+	[for="id"]
+	접근성 정도만... 늘어남
+	label 클릭시 커서가 input에 들어감
+
+<label for="user_id">
+<input type="" id="user_id" placeholder="" autofocus>
+
+
+inline은 하단 정렬이라서
+	vertical align 쓰는게 더 좋을 수 있음
+
+<select>
+	<option value="서버에 보내줄 값">naver.com</option>
+	서버에 text 그자체는 전송이 안됨 그래서 value에 적어놔야함
+
+name 값이 같아야 radio 작동
+<label><input type='radio' name='sub'><span>영어</span></label>
+<label><input type='radio' name='sub'><span>수학</span></label>
+<label><input type='radio' name='sub'><span>과학</span></label>
+
+
+
+<from 속성="속성값"> 여러가지의 폼 요소 </from>
+<input type="속성 값" value="초기값" size="크기" id="식별자" name="변수명 />
+
+
+name은 입력된 내용을 서버에 전송되기 위해 꼭 필요한 값, (필수)
+value는 폼 필드에 따라 내용을 미리 입력을 해 주는 값 입니다. (필수&선택)
+
+value="____" : 입력 필드의 입력내용을 설정
+value 속성으로 서버에 전달되는 값을 지정할 수 있다 : <value="___ ">
+- value값을 지정하지 않으면 텍스트 정보가 전송된다.
+
+border 안쪽에 outline 있음
+
+inline block은 진짜 영역만 block 처럼 잡히는거여서 margin 으로 가운데 정렬 안됨
+선택자에서 계층 구분은 계단 같은거여서 > /n 읽히지 마자 계단 하나 내려가서 쓰는거라 생각
+
+inline block 이면 부모로 묶어서 text align 하는게 제일 좋음

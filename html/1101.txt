@@ -1,0 +1,25 @@
+연결 선택자
+	h1+p : h1과 같은 부모를 가진 형제 요소 중 "첫번째" 동생 요소에만 스타일 적용
+	h1~p : h1과 같은 부모를 가진 형제 요소 중 "모든" 요소에만 스타일 적용
+
+속성 선택자
+	[속성*=값] : "값" substring 으로 포함하는 속성 선택
+
+
+
+transition
+	변화 시키는 속성(기본값 0) duration timeing(가속도, cubic-bezier())
+
+transform>translate
+	:hover {여기에 변경 완료 후 사항 다 넣고}
+		transition 속성은 원본에 넣어줘야함
+
+transform origin
+
+tab menu 만드는법
+            <input type="radio" name="tabmenu" id="one" checked>
+            <input type="radio" name="tabmenu" id="two">
+            <div class="tab_menu clear">
+              <label for="one">첫번째</label>  
+              <label for="two">두번째</label>  
+            </div>
