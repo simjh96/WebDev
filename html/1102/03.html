@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #wrap { width: 202px; height: 202px; border: 10px solid #fff; outline: 2px solid #ccc; margin: 100px auto;}
+        #wrap:hover img { animation-play-state: paused;}
+
+        img {display: block; animation: rotate 10s linear infinite}
+
+        @keyframes rotate {
+            0% { transform: rotate(0turn);}
+            100% { transform: rotate(3turn);}
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap"><img src="images/sticker.png" alt=""></div>
+</body>
+</html>

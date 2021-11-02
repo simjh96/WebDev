@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #slider {width: 1200px; height: 300px; margin: 100px auto; position: relative; overflow: hidden;}
+        .slide_list {width: 3600px; padding-left: 0; list-style-type: none; position: absolute; left: 0; top: 0; animation: roll 5s infinite;}
+        .slide_list li {width: 1200px; float: left;}
+        .slide_list li img {width: 100%;}
+
+        @keyframes roll {
+            0% { left: 0;}
+            33.3% { left: -1200px;}
+            66.6% { left: -2400px;}
+            100% { left: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div id="slider">
+        <ul class="slide_list">
+            <li><img src="images/slider1.jpg" alt=""></li>
+            <li><img src="images/slider2.jpg" alt=""></li>
+            <li><img src="images/slider3.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

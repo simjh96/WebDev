@@ -1,0 +1,14 @@
+@keyframes
+transition
+	static 한 상태의 key 값 찍어주면 중간 단계 랜더링 해줌
+		color, position, border-radius ...
+
+	원본에 적용할 transforamtion 에 대한 direction, timing 등 설정 해줘야함
+
+	transform {속성1 속성2... 속성n }
+		문제는 { } 안에는 순서에 맞게 변수 인식이 되어서
+		perspective 같은거는 먼저 써줘야함
+
+
+var()
+	:root{--변수명: color;}

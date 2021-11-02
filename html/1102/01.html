@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #wrap {border: 1px solid red; padding: 10px; height: 100px; position: relative;}
+        .ball {width: 100px; height: 100px; border-radius: 50%; 
+            background-color: brown; text-align: center; line-height: 100px; 
+            color: white; position: absolute; left: 10px; right: 10px; 
+            animation-name: move; animation-duration: 3s; 
+            animation-timing-function: ease; animation-iteration-count: 2; 
+            animation-delay: 1s; animation-direction: alternate; 
+            animation-fill-mode: forwards;}
+        /* #wrap:hover .ball {left: 80%; transform: rotate(360deg);} */
+    
+        @keyframes move {
+            from {left: 10px; background-color: violet;}
+            to {left: 90%; transform: rotate(360deg); background-color: tomato;}
+        }
+        @keyframes move {
+            0% {left: 0px; top: 0px; background-color: violet;}
+            25% {left: 500px; top: 0px; transform: rotate(360deg); background-color: tomato;}
+            50% {left: 500px; top: 500px; transform: rotate(720deg); background-color: tomato;}
+            75% {left: 0px; top: 500px; transform: rotate(1080deg); background-color: tomato;}
+            100% {left: 0px; top: 0px; transform: rotate(1440deg); background-color: tomato;}
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap">
+        <div class="ball">
+            test
+        </div>
+    </div>
+</body>
+</html>
