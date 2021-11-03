@@ -1,0 +1,25 @@
+@charset utf-8;
+
+body, div, header, footer, main, nav, ul, li, p, h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; }
+
+ul, li { list-style: none; }
+.clear::after { content: ""; clear: both; display: block; }
+
+/* 상단 */
+header { width: 100%; background: #34495e; }
+
+/* 메인 이미지단 */
+div#main_img { width: 1300px; margin: 0 auto; margin-top: 20px; }
+
+main { width: 1300px; margin: 30px auto; }
+
+/* 컨텐츠 단 */
+
+footer { width: 100%; background: #34495e; padding: 30px 0; }
+
+/* 0~ 500px까지 적용 되는 CSS */
+@media screen and (max-width:500px) {
+
+    
+}
+

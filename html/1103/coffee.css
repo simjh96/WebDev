@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+body, h1, h2, h3, h4, p, ul, li, ol { margin: 0; padding: 0;}
+a {text-decoration: none; color: #333;}
+ul {list-style: none;}
+.clear::after {content: ""; display: block; clear: both;}
+
+#wrap {max-width: 1000px; margin: 0 auto; border: 1px solid #333;}
+header {background-color: chocolate; padding: 10px; border-bottom: 1px solid #333;}
+header nav {}
+
+.gnb {}
+.gnb li {float: left; margin: 0 20px;}
+.gnb li a {color: #fff;}
+
+#visual {height: 300px; background: url(test/images/header.jpg) no-repeat center / cover; position: relative; border-bottom: 1px solid #333;}
+#visual .subcopy { height: 30%; width: 35%; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: white; background-color: rgba(51, 51, 51,0.5);}
+#visual .btn {background-color: chocolate; position: absolute; top: 100px;}
+
+#content {}
+#content section {float: left; width: 50%; box-sizing: border-box; padding: 50px 10px;}
+#content section:first-child {border-right: 1px solid #333; height: 450px;}
+#content section:last-child {width: 100%; border-top: 1px solid #333;} 
+
+#content section .title { margin-bottom: 20px;}
+#content section .imgbox {}
+#content section .imgbox img {height: 211px;}
+#content section .txtlist { line-height: 2; margin-bottom: 20px;}
+
+#content section .subtitle {color: cornflowerblue; font-size: 24px;}
+#content section .icebox {float: right; margin-top: -50px; border-radius: 50%; overflow: hidden;}
+#content section .icelist {float: left; margin-top: 20px; padding-left: 20px; line-height: 2;}
+
+footer { background-color: #333; color: #fff; text-align: center; padding: 15px;}
+
+@media screen and (max-width: 780px) {
+    #content section {float: none; width: 100%;}
+    #content section:first-child {border-right: none; border-bottom: 1px solid #333;}
+    
+    #content section .imgbox {float: left; margin-right: 20px;}
+    #content section .txtlist {float: left; }
+    
+    .gnb { max-width: 400px; margin: 0 auto; }   
+    #visual .btn {top: 300px;}
+    #content section .icebox {float: none; border-radius: 50%; width: 80%; margin: 30px auto;}   
+    #content section .icebox img {width: 100%;}
+    #content section .icelist {float: none; padding-left: 20px; line-height: 2;}
+}
+
+@media screen and (max-width: 500px) {
+    #visual { height: 100vh;}
+    #visual .btn { top: 80vh}
+    #content section .imgbox
+}

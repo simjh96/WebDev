@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+body, h1, h2, h3, h4, p, ul, li, ol, q {margin: 0; padding: 0;}
+a {text-decoration: none; color: #333;}
+ul {list-style: none;}
+.clear::after {content: ""; display: block; clear: both;}
+
+/* 공통 & PC */
+#wrap {max-width: 1200px; margin: 0 auto;}
+
+header { background-color: #34495e; height: 50px; position: relative;}
+.gnb {width: 592px; margin: 0 auto;}
+.gnb li {float: left; line-height: 50px; padding: 0 30px; border-right: 1px solid white;}
+.gnb li:last-child {border: none;}
+.gnb li a { color: white;}
+.toggle {display: none;}
+
+#visual { height: 400px; background: url(../images/top-1.jpg) no-repeat center / cover;}
+
+#content {text-align: center;}
+#content section {padding: 80px 5%;}
+#content section h2 {font-size: 30px; margin-bottom: 20px;}
+#content section>p {font-size: 20px; line-height: 2; float: left; width: 70%; margin-top: 30px;}
+#content section img {float: right; width: 20%;}
+#content section:nth-child(2n-1) {background-color: #f3f3f3;}
+
+#content section q::before {content: ""; display: block; height: 50px; background: url(../images/quot-1.png) no-repeat center top;}
+#content section q { color: orangered; font-size: 20px; font-weight: bold; font-style: italic;}
+#content section:nth-child(2) { padding-bottom: 130px;}
+#content section:nth-child(2) p {width: 100%; float: none; text-align: center;}
+#content section q::after {content: ""; display: block; height: 50px; background: url(../images/quot-2.png) no-repeat center bottom;}
+
+.list {margin-top: 30px;}
+.list li {float: left; padding: 10px; width: 23%; border: 1px solid #333; box-sizing: border-box; margin-right: 2.666%;}
+.list li:last-child {margin-right: 0;}
+.list li h3 {margin: 10px 0;}
+.list li p {text-align: left; line-height: 1.8; font-size: 14px;}
+
+
+footer { background-color: #34495e; padding: 20px;}
+.copy {float: left; color: white; }
+.sns {float: right; margin: 30px 100px;}
+.sns li {float: left; padding: 0 10px;}
+
+
+@media screen and (max-width: 860px) {
+    .list li {float: none; margin-bottom: 15px; width: 47%; border: 1px solid #333; box-sizing: border-box; margin-right: 0;}
+    .list li:nth-child(2n) {float: left;}
+    .list li:nth-child(2n-1) {float: right;}
+       
+}
+
+@media screen and (max-width: 580px) {
+    .gnb {display: none;}
+    .toggle {display: block; position: absolute; top: 5px; right: 3%; }
+    .toggle span {width: 30px; height: 2px; background-color: white; display: block;}
+    .toggle span:nth-child(2) {margin: 7px 0;}
+    .list li {margin-bottom: 15px; width: 100%; border: 1px solid #333; box-sizing: border-box; margin-right: 0;}
+    .list li:nth-child(2n) {float: none;}
+    .list li:nth-child(2n-1) {float: none;}
+    .copy {float: none }
+    .sns {float: none}         
+}
