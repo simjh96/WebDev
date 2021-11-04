@@ -10,8 +10,6 @@ ul { list-style: none; }
 div, section, header, footer, aside { box-sizing: border-box; }
 .clear::after { content: ""; clear: both; display: block; }
 
-/* div, header, footer, section { border: 1px solid red; } */
-
 #wrap { width: 1200px; margin: 0 auto; }
 header { height: 100px; }
 header .logo { float: left; margin-top: 35px; line-height: 0; }

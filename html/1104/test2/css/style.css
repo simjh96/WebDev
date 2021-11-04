@@ -9,15 +9,15 @@ ul {list-style: none;}
 #wrap {max-width: 1200px; margin: 0 auto;}
 
 header { background-color: #34495e; height: 50px; position: relative;}
-.gnb {width: 592px; margin: 0 auto;}
-.gnb li {float: left; line-height: 50px; padding: 0 30px; border-right: 1px solid white;}
+.gnb { display: flex; justify-content: center;}
+.gnb li { line-height: 50px; padding: 0 30px; border-right: 1px solid white;}
 .gnb li:last-child {border: none;}
 .gnb li a { color: white;}
 .toggle {display: none;}
 
 #visual { height: 400px; position: relative; overflow: hidden;}
-.slide_list {width: 400%; position: absolute; left: 0; top: 0; animation: roll 8s forwards infinite;}
-.slide_list li {width: 25%; float: left; height: 400px;}
+.slide_list {width: 400%; position: absolute; left: 0; top: 0; animation: roll 8s forwards infinite; display: flex;}
+.slide_list li {width: 25%;  height: 400px; flex: 1;}
 .slide_list li.bg1 {background: url(../images/top-1.jpg) no-repeat center / cover;}
 .slide_list li.bg2 {background: url(../images/top-2.jpg) no-repeat center / cover;}
 .slide_list li.bg3 {background: url(../images/top-3.jpg) no-repeat center / cover;}
@@ -26,28 +26,30 @@ header { background-color: #34495e; height: 50px; position: relative;}
 
 #content {text-align: center;}
 #content section {padding: 80px 5%;}
-#content section h2 {font-size: 30px; margin-bottom: 20px;}
-#content section>p {font-size: 20px; line-height: 2; float: left; width: 70%; margin-top: 30px;}
-#content section img {float: right; width: 20%;}
+#content section:first-child {display: flex; flex-flow: row wrap; justify-content: space-between;}
+
+#content section h2 {font-size: 30px; margin-bottom: 20px; width: 100%;}
+#content section>p {font-size: 20px; line-height: 2;  margin-top: 30px; width: 70%;}
+#content section img { width: 20%;}
 #content section:nth-child(2n-1) {background-color: #f3f3f3;}
 
 #content section q::before {content: ""; display: block; height: 50px; background: url(../images/quot-1.png) no-repeat center top;}
 #content section q { color: orangered; font-size: 20px; font-weight: bold; font-style: italic;}
 #content section:nth-child(2) { padding-bottom: 130px;}
-#content section:nth-child(2) p {width: 100%; float: none; text-align: center;}
+#content section:nth-child(2) p {width: 100%;  text-align: center;}
 #content section q::after {content: ""; display: block; height: 50px; background: url(../images/quot-2.png) no-repeat center bottom;}
 
-.list {margin-top: 30px;}
-.list li {float: left; padding: 10px; width: 23%; border: 1px solid #333; box-sizing: border-box; margin-right: 2.666%;}
+.list {margin-top: 30px; display: flex; justify-content: space-between;}
+.list li { padding: 10px; border: 1px solid #333; box-sizing: border-box; width: 23%;}
 .list li:last-child {margin-right: 0;}
 .list li h3 {margin: 10px 0;}
 .list li p {text-align: left; line-height: 1.8; font-size: 14px;}
 
 
-footer { background-color: #34495e; padding: 20px;}
-.copy {float: left; color: white; }
-.sns {float: right; margin: 30px 100px;}
-.sns li {float: left; padding: 0 10px;}
+footer { background-color: #34495e; padding: 20px; display: flex; justify-content: space-between;}
+.copy { color: white; }
+.sns {display: flex; flex-flow: row nowrap;}
+.sns li { padding: 0 10px;}
 
 @keyframes roll {
     0% {}
@@ -58,10 +60,15 @@ footer { background-color: #34495e; padding: 20px;}
 
 
 @media screen and (max-width: 860px) {
-    .list li {float: none; margin-bottom: 15px; width: 47%; border: 1px solid #333; box-sizing: border-box; margin-right: 0;}
-    .list li:nth-child(2n) {float: left;}
-    .list li:nth-child(2n-1) {float: right;}
-       
+    .list {flex-flow: row wrap; justify-content: space-around;}
+    .list li { margin-bottom: 15px; width: 47%; border: 1px solid #333; box-sizing: border-box; margin-right: 0;}
+    .list li:nth-child(2n) {}
+    .list li:nth-child(2n-1) {}
+    #content section:first-child {justify-content: center;}
+    #content section:first-child p {margin-bottom: 30px; width: 100%;}
+    #content section:first-child img {align-self: center;}
+
+    
 }
 
 @media screen and (max-width: 580px) {
@@ -70,14 +77,14 @@ footer { background-color: #34495e; padding: 20px;}
     .toggle span:nth-child(2) {margin: 7px 0;}
     .toggle:hover + nav .gnb {height: 160px;}
     
-    .gnb {width: 100%; position: absolute; left: 0; top: 50px; height: 0px; overflow: hidden; transition: height 1s; z-index: 1;} 
-    .gnb li {float: none; line-height: 30px; padding: 0 5%; height: 30px; border-right: 0; background-color: rgba(52, 73, 94, 0.8); border-bottom: 1px solid #333;}
+    .gnb {position: absolute; left: 0; top: 30px; height: 0px; overflow: hidden; transition: height 1s; z-index: 1; flex-flow: column wrap; width: 100%;} 
+    .gnb li { line-height: 30px; padding: 0 5%; height: 30px; border-right: 0; background-color: rgba(52, 73, 94, 0.8); border-bottom: 1px solid #333; text-align: center;}
     .gnb li:last-child {border: none;}
     .gnb li a { color: white;}
     
     .list li {margin-bottom: 15px; width: 100%; border: 1px solid #333; box-sizing: border-box; margin-right: 0;}
-    .list li:nth-child(2n) {float: none;}
-    .list li:nth-child(2n-1) {float: none;}
-    .copy {float: none }
-    .sns {float: none}         
+    .list li:nth-child(2n) {}
+    .list li:nth-child(2n-1) {}
+    .copy {}
+    .sns {}         
 }

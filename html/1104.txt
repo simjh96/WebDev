@@ -1,0 +1,30 @@
+
+
+
+반응형
+	이전 rule -> 수정 -> 이후 rule
+	float: left      ->      float: none
+
+	모든 width는 max-width로 설정하는것이 좋음
+		flex 사용시 width > 브라우저 너비면 객체 사라져 보임
+
+flex 방식
+	parent 일괄적용
+		flow: direction wrap
+			dir: 축을 정해줌
+				justify, align
+					align 사용시 해당 parent의 height가 잘 정의 돼 있어야함
+					align content 사용시 원래 서식 들고 가서 중앙 정렬 안될 수 도 있으니 align item 도 써보자
+
+					안보이는 자식들도 잡아서 여백/width 하기 때문에 의도치 않은 공백이 있다면 자식 {display: none}
+
+			wrap: 정렬 불가한 낙오자들을 잡아 받혀줌
+				기본으로 width = 전체 여백/n 으로 잡히기 때문에 여백이 안생긴다
+					width 를 미리 잡아 놓고 flex 하는것 추천
+				width 100%로 줄바꿈 효과
+
+	element 형제들 각각에 적용(부모 상자에 flex 필요x)
+		flex : grow shrink basis
+			화면 비율에 맞춘 증가 속도 비
+			basis : init width
+		order			

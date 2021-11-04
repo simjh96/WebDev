@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+/* 1140 중앙정렬
+main-color: #1a1f71 sub-color: #f7b600 */
+
+:root {
+    --main-col: #1a1f71;
+    --sub-col: #f7b600;
+}
+
+/* 모바일 */
+#wrap {}
+
+header {height: 100px; background-color: var(--main-col); border-bottom: 4px solid var(--sub-col);}
+.inner {max-width: 1140px; margin: 0 auto; position: relative; display: flex; justify-content: space-between; align-items: center; height: 100px; padding: 0 3%;}
+.logo {  }
+.toggle { color: #fff; font-size: 32px;}
+.top_menu {position: absolute; left: 0; top: 100px; width: 100%; }
+.gnb { height: 0px; overflow: hidden; transition: 1s;}
+.gnb li { height: 40px; line-height: 40px; background-color: rgba(26, 31, 113, 0.8); text-align: center; border-bottom: 1px solid var(--sub-col);}
+.gnb li a {color: #fff;}
+.toggle:hover + .top_menu {}
+.toggle:hover + .top_menu .gnb {height: 200px;}
+.search {display: none;}
+
+#visual {height: 500px; background: url('../images/marquee-visahotdeals-1600x900.jpg') no-repeat center / cover;}
+
+#visual .inner {height: 500px;}
+.caption { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 70%; background-color: rgba(255, 255, 255, 0.5); padding: 30px;}
+.main_title { color: var(--main-col); margin-bottom: 10px;}
+.sub_title { font-size: 14px; line-height: 1.8;}
+.btn {background-color: var(--sub-col); width: 120px; height: 40px; border: 0; border-radius: 5px; display: block; margin: 20px auto 0; }
+.btn:hover {color: var(--sub-col); background-color: var(--main-col);}
+
+#center_menu {height: 60px; background-color: #fff; border-bottom: 2px solid #ccc;}
+.center_list { display: flex; justify-content: space-evenly; align-items: center; height: 60px; margin: 0 10px;}
+.center_list li {position: relative; flex: 1 1 auto; text-align: center;}
+.center_list li::after {content: ""; display: block; width: 1px; height: 25px; position: absolute; background-color: aquamarine; right: 0; top: 2px;}
+.center_list li:first-child::before {content: ""; display: block; width: 1px; height: 25px; position: absolute; background-color: aquamarine; left: 0; top: 2px;}
+.center_list li a {}
+
+#content {max-width: 1140px; margin: 0 auto;}
+#content section {padding: 100px 5%; text-align: center; border-bottom: 1px solid#ccc;}
+.title {font-size: 36px; color: var(--main-col); margin-bottom: 40px;}
+.line {position: relative;}
+.line::after {content: ""; height: 3px; width: 100%; background-color: var(--sub-col); position: absolute; left: 0; bottom: -5px; transition: 0.5s; transform: scaleX(0); transform-origin: left;}
+.title:hover .line::after {transform: scaleX(1);}
+
+
+
+
+.hotdeal {}
+.hotdeal .subcopy {}
+
+.store {}
+.card {}
+
+footer {background-color: #f7f7f7; border-top: 1px solid #ccc; padding: 50px 0;}
+
+
+@keyframes right_slide {
+    0% {}
+    100% {width: 100%;}
+}
