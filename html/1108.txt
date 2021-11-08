@@ -1,0 +1,32 @@
+해야할것
+	node js와 eslint 설치
+	keyboard shortcuts
+		ctrl+shift+w
+		ctrl+shift+r
+		ctrl+shift+e : evaluate math expression
+	live sass compiler : watch sass -> compile to css
+		"savePath": "~/../css/" ~ : 현재 경로
+	color highlight : 삭제
+
+정보
+	vscode live plugin 사용시 경로 너무 넓으면 먹통남
+	아래하 한글 켜져 있으면 vscode 단축키 안먹음
+	vscode command pallet : f1 -> emmet: wrap with abbreviation -> ul>li*>a
+	페이지 넘어가는 용도 : a tag
+	내용 바뀌는 용도 :	button tag
+	템플렛 사이트: 굿디자인웹
+	setting>extension>원하는 extension : settings.json 수정
+
+
+scss
+	parent { desendant{}
+                       >child{} }
+	&: 자기 자신
+	self { &:hover {} }
+
+	_vars.scss		#_ 붙은건 live sass에서 컴파일 안함
+		$main-color: 
+	@import "vars";
+	a:hover {
+	    color: $main-color;
+	}
