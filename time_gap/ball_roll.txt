@@ -1,0 +1,101 @@
+https://www.acmicpc.net/problem/13460
+위치 추적
+
+	굴려 -> 자리 정리
+		end: 	+n: player 2만 남은 branch 나오면 moves 길이 return
+			-1: 새굴림 안나옴
+
+
+	memo: p1, p2 location, 해본 move 기록해
+		해본 move 단위로 기록 안하면 move 하나 하고 나머지 세개 안해볼 수 있기 때문
+		근데 한 loop 다 돌고 메모하면 되긴함		
+
+	굴려:
+		moves<=10 이후로는 새 굴림 없음
+		memo에 있는건 하지마
+		방금 전 방향 하지마
+		
+	그래프로 n*m
+		n.u n.d n.l n.r
+		n.방향 끝자락인 n 으로 바로 이동
+		겹치는 경우 더 먼길 온 친구가 직전으로 이동
+		
+		n.fu n.fd n.fl n.fr -> (final position, distance)
+			어차피 map은 안변하니까 미리 다 계산 해놔
+			경로에 hole이 있으면 자리 정리 필요도 없이 사라짐
+
+
+
+class Node:
+	def __init__(self, status):
+		# path, block, hole
+		self.status = status
+
+		self.u = None
+		self.d = None
+		self.l = None
+		self.r = None
+
+class Graph:
+	def __init__(self, board):
+		self.r = None
+		self.b = None
+
+		# set nodes
+		self.nodes = dict()
+		for r in range(len(board)):
+			for c in range(len(board[0])):
+				if board[r][c] == '#':
+					self.nodes[(r,c)] = Node('b')
+				if board[r][c] == '.':
+					self.nodes[(r,c)] = Node('p')
+				if board[r][c] == 'R':
+					self.nodes[(r,c)] = Node('p')
+					self.r = (r, c)
+				if board[r][c] == 'B':
+					self.nodes[(r,c)] = Node('p')
+					self.b = (r, c)
+				if board[r][c] == 'O':
+					self.nodes[(r,c)] = Node('h')
+
+	
+	def set_end(self, board):
+		# embed all nodes
+		for r in range(len(board)):
+			for c in range(len(board[0])):
+				self.nodes[r][c].u = dfs((r,c), 'u')
+	def dfs(self, start: tuple, direction):
+		# if not holed, return final pos
+		
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+
+
+	
