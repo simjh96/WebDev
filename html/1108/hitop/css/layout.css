@@ -1,0 +1,45 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  color: #111;
+}
+
+a {
+  color: inherit;
+}
+
+#header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 50px;
+}
+
+#header .container #gnb {
+  text-align: center;
+}
+
+#header .container #gnb .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#header .container #gnb .list > li > a {
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 500;
+  display: block;
+  padding: 25px 50px;
+}
+
+#header .container #gnb .list > li .depth02 li a {
+  display: block;
+  padding: 10px 0;
+}

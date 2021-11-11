@@ -1,0 +1,50 @@
+기타
+	positioning 4 좌표 다 주면 너비 높이 생김
+
+	img 는 inline이라서 vertical-align: top 해줘야 여백 사라짐
+
+	scss 안에서 연산 가능
+		띄어쓰기 필수
+
+	&: 참조가 아닌 string 치환
+
+
+mixin 문법(style markup 을 반환: 그냥 style 뭉치임)
+	파일명: _minxins.scss -> @import "mixins": @include foo
+	
+	쓰여지는 코드가 모두 sytle markup 으로 반환됨
+		@if () {}
+		@for {} 안에서는 stack 위로 올려져서 반환 안됨
+			여기서 string concatination -> $str: unquote($shadow)
+			후 style: $str 으로 반환
+
+
+원격 저장소
+	remote
+		$ git remote add 이름 url (기본 이름 origin)
+		$ git fetch 이름: 원격저장소 데이터 모두 로컬로 부르기
+		$ git push 원격저장소_이름 브랜치_이름
+			HEAD 는 브랜치의 이름(내가 현재 있는 브랜치)
+
+	modified
+		변경됐지만 commit 안된 사항, 우리의 적
+
+	untracked
+		새로 생긴 파일이라 git이 track 못함
+	checkout
+		브랜치 이동(디렉토리의 파일 내용도 변경됨)
+		나중에 merge와 -d 진행
+		git checkout -- [파일 이름] 명령으로 애초에 저장소에 저장된 버전을 다시 꺼내온다.
+
+	에러 나는 가장 중요한 이유
+	1. commit 하고 옮겨
+		지금 modified 된 부분들이
+			checkout 되면 존재가 불가능해짐
+	2. branch 새로 만들고 head 떼어내
+		head가 master 끝자락에 있는 상태에서 master 내부의
+		과거로 checkout 하려 하면
+		branch 못만들었는데 자라난 부분에 자라난부분이
+		붙을수가 없음
+		무조건 그냥 branch 새로 만들고
+		나중에 merge하던지해
+		

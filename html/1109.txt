@@ -1,0 +1,19 @@
+&.open
+   .open 이 붙으면 실행
+      js 로 붙임
+
+아니면 같은 button 중에
+button {
+   &.next {}
+   &.prev {}
+}
+
+구글 머티리얼
+   아이콘
+   규격
+
+script보다 html이 먼저 읽혀야함
+   defer 
+
+npm 은 기본 function의 parameter를 api json으로 받음
+const mainVisualSlider = new Swiper('#mainVisual', {api_key: -, });

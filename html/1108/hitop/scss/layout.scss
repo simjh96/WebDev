@@ -1,0 +1,48 @@
+@import "vars";
+// * { border: 1px dotted red !important;}
+
+html {
+    font-size: 10px;
+}
+body {
+    font-size: 1.6rem;
+    color: #111;
+}
+a {
+    color: inherit;
+}
+
+#header {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 50px;
+
+        #gnb {
+            text-align: center;
+
+            .list {
+                display: flex;
+
+                >li {
+                    >a {
+                        font-size: $medium-size;
+                        text-transform: capitalize;
+                        font-weight: 500;
+                        display: block;
+                        padding: 25px 50px;
+                    }
+
+                    .depth02 {
+                        li {
+                            a {
+                                display: block;
+                                padding: 10px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

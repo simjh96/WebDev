@@ -1,0 +1,28 @@
+#header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#header h1 a {
+  color: red;
+  text-decoration: none;
+}
+
+#header h1 a:hover {
+  font-size: 50px;
+}
+
+#header h1 a::after {
+  content: "after";
+  display: block;
+}
+
+#header #gnb > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
