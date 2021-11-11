@@ -1,0 +1,5 @@
+position : sticky
+
+flex + width 100% 할때 width로 공백 잡히는 경우가 많음
+
+favicon 등록
