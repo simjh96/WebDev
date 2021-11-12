@@ -1,0 +1,54 @@
+header {
+  position: fixed;
+  width: 100%;
+  color: #fff;
+}
+
+header * {
+  border: 1px solid #fff;
+}
+
+header #header_inner {
+  width: 1920px;
+  height: 100px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header #header_inner .logoBox {
+  width: 10%;
+  height: 100%;
+  background: url("../images/logo.png") no-repeat center;
+  margin-right: auto;
+}
+
+header #header_inner .gnb {
+  width: 60%;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+header #header_inner .gnb .dep1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+header #header_inner .gnb .dep1 .dep1_li {
+  position: relative;
+}
+
+header #header_inner .gnb .dep1 .dep1_li .dep2 {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  white-space: nowrap;
+}

@@ -1,0 +1,59 @@
+@import "vars";
+@import "mixins";
+html {
+  font-size: 10px;
+}
+body {
+  font-family: "Lexend", "Noto Sans KR", sans-serif;
+  font-size: 1.6rem;
+  color: $text-color;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+.hidden {
+  display: none;
+}
+
+.titleBox {
+  line-height: 1.5;
+  h2 {
+    margin-bottom: 50px;
+    font-size: $h2;
+    font-weight: 600;
+  }
+  p {
+    font-size: $medium-size;
+  }
+}
+
+.btns {
+  display: flex;
+  &.center {
+    justify-content: center;
+  }
+  &.right {
+    justify-content: flex-end;
+  }
+  .btn {
+    border: 1px solid $border-color;
+    border-radius: 100px;
+    transition: 0.25s ease;
+    @include flexCenter();
+  }
+  .transition:hover {
+    background-color: $text-color;
+    border-color: $text-color;
+    color: #fff;
+  }
+  .large {
+    height: 60px;
+    padding: 0 50px;
+  }
+}

@@ -1,0 +1,50 @@
+@import "vars";
+@import "mixins";
+
+header {
+  & * {
+    border: 1px solid $white-color;
+  }
+
+  position: fixed;
+  width: 100%;
+  color: $white-color;
+  #header_inner {
+    width: 1920px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    .logoBox {
+      width: 10%;
+      height: 100%;
+      background: url("../images/logo.png") no-repeat center;
+      margin-right: auto;
+    }
+    .gnb {
+      width: 60%;
+      margin: 0 auto;
+      font-size: $h4;
+      .dep1 {
+        display: flex;
+        justify-content: space-evenly;
+
+        .dep1_li {
+          position: relative;
+          .dep2 {
+            // display: none;
+            position: absolute;
+            left: 0;
+            top: 100px;
+            white-space: nowrap;
+            // transform: translateY(100%);
+          }
+        }
+      }
+    }
+    .util_box {
+      // margin-left: auto;
+    }
+  }
+}

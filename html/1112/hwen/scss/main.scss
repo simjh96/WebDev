@@ -1,0 +1,24 @@
+@import "vars";
+@import "mixins";
+
+#main {
+  #mainVisual {
+    overflow: hidden;
+    video {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+    .slogan {
+      color: $white-color;
+      @include absCenter();
+      .main {
+        font-size: $xx-large-size;
+        margin-bottom: 30px;
+      }
+      .sub {
+        font-size: $medium-size;
+      }
+    }
+  }
+}
