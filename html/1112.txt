@@ -1,0 +1,46 @@
+
+
+https://swiperjs.com/demos
+
+
+
+화면소리를 죽여야만(mute) autoplay 가능
+	모바일은 자동재생 안됨...(구글정책)
+
+
+
+nav에 h2 왠만하면 넣어줌 display: none
+
+z-index가 더 높은게 끼어 있으면 hover 했을때 팝업이 꺼질수도 있음!
+
+
+
+tr 은 물리적인 요소가 아니라 논리적인 요소임
+	안되는 css 가 있을 수 있음
+
+
+
+table outline
+	table
+		caption
+		colgroup>col[width="%"]+col[width="%"]+col[width="%"]
+		thead
+			tr>(th>{})+(th>{})+(th>{})
+		tbody
+			tr>(td>{})+(td>{})+(td>{})
+
+
+intellisence ⊃ codehint, lint
+
+
+.btn -> .button 에도 적용 됨...
+	아니라고 하심
+mixin 에서 scss 못넣나 안되나
+	못넣는다고 하심
+  // &^ {
+  //   position: absolute;
+  // }
+
+px, rem, % 뭘로 해야하지...
+padding, font size, width, height
+	여러번 해보면 알게 될거라 하심
