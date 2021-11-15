@@ -1,0 +1,32 @@
+https://developers.kakao.com/console/app/665211/config/platform
+http://localhost:port 등록
+
+network>headers 200번 ok
+
+js -> ` backtick 으로 둘러 싸면 다 str
+
+삼각형 만드는법
+&::after {
+   content: "";
+   width: 0;
+   height: 0;
+   border: 10px solid transparent;
+   border-top: $main-color;
+}
+
+서버
+   고정아이피
+      cafe24, 가비아
+      aws
+   웹호스팅
+      dothome
+      FTP 아이디 비번 설정(TCP/IP 이용하여 file transfer protocal)
+         마이닷홈> ftp접속설정 변경
+   포장이사: 파일질라
+      local -> remote
+         host: host 주소(.home.co.kr)
+         사용자명:
+         비밀번호:
+            -> 빠른 연결로 파일 올리기(root folder 생성하기)
+      root folder(html)
+         원하는 파일을 html 안에다 옮기면 끝
