@@ -1,0 +1,49 @@
+serverside language
+	js, java, php, asp ...
+
+domain name server
+	domain(www..com) -> ip(127.000.000.000)
+	
+오토셋(고정 ip 서버 아님)
+	설치 -> http://127.0.0.1/ (웹서버 작동)-> C:\AutoSet10\public_html\ : 메인 작업 공간
+	server side rendering 가능(php) -> header를 잘라버릴수 있음 <? include("../include/header.html"); ?> 이런거
+
+	ctrl+shift+r 로 새로고침해줘야함
+
+
+app키 다 바꿔
+
+
+root/.prettierignore -> include/n 입력하면 자동완성 꺼짐 설정 완료
+
+<? include("../include/footer.html"); ?> 에서 <html> tag가 있어버리면
+해당 html이 닫혀버려서 연결이 안됨 (닫혀버림)
+
+<?php> 와 동일
+
+<select name="백엔드에서 다룰것">
+페이지 외로 데이터 넘길거면 form 태그 삽입 필요
+
+
+.btns {} -> 모든 btns에 적용됨으로
+.btns { &.left {justify contents: flex-end} } 이런 식으로 설정해둠
+
+
+label : 접근성 높을때 사용(for="누르면 반응할 id")
+
+crud
+	create read update delete
+
+check box 모양 변경
+	checkbox display none 해놓고
+	label::after 등으로 새로 짜는게 나음
+
+rest api(라우팅)
+	url 주소를 원하는 형식으로 만들고 그에 맞게 주소값의 model을 전달해줌
+
+
+th[scope=''] 명심하자
+
+block 요소 위에 inline 감싸지 마라
+
+안되면 div로 한겹 더해

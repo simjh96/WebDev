@@ -1,0 +1,91 @@
+<? include("../include/header.html") ?>
+<div class="wraper">
+  <div class="top">
+    <div class="path_top"><a href="">home</a> &nbsp;&gt; &nbsp;<a href="">고객지원</a> &nbsp;&gt; &nbsp;<a href="">샘플 신청</a></div>
+    <h2 class="title">
+      <span>고객 지원</span>
+    </h2>
+    <div class="path_bottom">
+      <ul>
+        <li><button class="">FAQ</button></li>
+        <li><button class="">온라인문의</button></li>
+        <li><button class="">담당자연락처</button></li>
+        <li><button class="">제품카탈로그</button></li>
+        <li><button class="btn normal picked">샘플신청</button></li>
+      </ul>
+    </div>
+  </div>
+  <!-- top end -->
+  <div class="middle">
+    <div class="notice">
+      <p>
+        신청 내용에 개인정보를 기재하시는 경우, 답변 완료 후 임의로 삭제될 수 있사오니 개인 정보 기재는 삼가주세요. <br />
+        * 항목은 필수 입력항목입니다.
+      </p>
+    </div>
+    <table>
+      <colgroup>
+        <col style="width: 8%" />
+        <col style="width: 40%" />
+        <col style="width: 8%" />
+        <col style="width: 40%" />
+      </colgroup>
+      <tr>
+        <th scope="row">회사명*</th>
+        <td><input type="text" class="input" /></td>
+        <th scope="row" class="leftMgn">이름*</th>
+        <td><input type="text" class="input" /></td>
+      </tr>
+      <tr>
+        <th scope="row">휴대전화*</th>
+        <td><input type="text" class="input" /></td>
+        <th scope="row" class="leftMgn">이메일*</th>
+        <td><input type="text" class="input" /></td>
+      </tr>
+      <tr>
+        <th scope="row">샘플종류*</th>
+        <td>
+          <select name="" id="" class="input">
+            <option value="">샘플종류를 선택하세요</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row" rowspan="2">주소*</th>
+        <td rowspan="1" class="withBtn"><input type="text" placeholder="우편번호" class="gray input" /><button class="btn normal">우편번호 검색</button></td>
+      </tr>
+      <tr>
+        <td><input type="text" placeholder="주소" class="gray input" /></td>
+        <td colspan="2" class="leftMgn"><input type="text" placeholder="나머지 주소 입력" class="input" /></td>
+      </tr>
+      <tr>
+        <th scope="row">제목*</th>
+        <td colspan="3"><input type="text" class="input" /></td>
+      </tr>
+      <tr>
+        <th scope="row">내용*</th>
+        <td colspan="3"><textarea name="" id="" cols="30" rows="10" class="input"></textarea></td>
+      </tr>
+      <tr class="upload">
+        <th scope="row">첨부파일*</th>
+        <td colspan="3">
+          <div class="withBtn">
+            <span class="gray"><p>총 5MB 문서와 이미지 파일만 첨부가 가능합니다.</p></span><label for="fileAdd"><button class="btn normal">파일첨부</button></label
+            ><input type="file" id="fileAdd" class="input" />
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <!-- middle end -->
+  <div class="bottom withBtn">
+    <div class="terms">
+      <label for="agree1">&nbsp;<input type="checkbox" id="agree1" class="input" />개인정보 수집에 동의합니다. <span>전문 보기</span></label>
+      <br />
+      <label for="agree2">&nbsp;<input type="checkbox" id="agree2" class="input" />만 14세 이상입니다.</label>
+    </div>
+    <button class="btn normal">확인</button>
+  </div>
+</div>
+
+<? include("../include/footer.html") ?>
