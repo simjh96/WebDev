@@ -1,0 +1,70 @@
+모바일웹
+	규칙
+		모바일은 height가 더 기니까 주로 height에 맞춰서 크기 조정
+
+반응형웹
+
+
+js
+	api
+		mdn
+
+	const 상수명
+	let 변수명 = 10;
+	document: html 전체
+		.querySelector(""): selector 찾기
+			객체로 불러옴(json 자료형이겠지)(element, object)
+	
+	selector 객체에 대해
+		.addEventListener("click", function () {alert();});
+			event가 str으로 받네
+		.classList
+			.add("on")
+	
+pointer-events: none;
+	해당 element에 가려져서 event 안생기는것을 방지하기 위해
+	장애물이 될 element에 부여하는 속성	
+
+
+스크롤 없애는법
+	overflow hidden
+
+
+리다이렉팅
+	index 가 없는 경로에서 리다이렉팅
+		근데 이건 상대경로인지 절대인지 구별 못하나?
+			/ 있으면 절대 경로 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+			없으면 무조건 상대경로..(./ 생략임)
+
+dl tag
+    Definition list
+    Dt Dd
+
+
+&.open
+   .open 이 붙으면 실행
+      js 로 붙임
+
+아니면 같은 button 중에
+button {
+   &.next {}
+   &.prev {}
+}
+
+구글 머티리얼
+   아이콘
+   규격
+
+script보다 html이 먼저 읽혀야함
+   defer 
+
+npm 은 기본 function의 parameter를 api json으로 받음
+const mainVisualSlider = new Swiper('#mainVisual', {api_key: -, });
+
+vh: viewport height
+
+
+api 써서 slider 했으면
+margin이나 width 같은거는 api 통한 setting과 충돌 가능함...
+	ex) slidesperview 에서 이미 width 가 정해졌을 수 있음
+	
