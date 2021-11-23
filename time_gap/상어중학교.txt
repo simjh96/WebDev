@@ -1,0 +1,28 @@
+상어중학교
+https://www.acmicpc.net/problem/21609
+
+반시계방향 회전 변환
+	n,m -> M-m,n
+
+반시계 회전(edge perspective)
+	up -> left
+	right -> up
+	down -> right
+	left -> down
+
+가장 큰 블록
+	bfs
+		visit 한 블럭은 유일무이 함으로
+		해당 영역에 닿은 애는 더 구할 필요 x
+
+블록 member 다 none
+
+중력 구현
+	-1 인 애들 빼고는 다 적용
+	다들 가야할 방향 정해주고 none 끝날때까지 이동
+		(사실 끝단만 이동해주고 나머지 쌓으면 되긴함)
+
+	
+
+
+	

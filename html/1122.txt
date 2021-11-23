@@ -1,0 +1,40 @@
+swiper
+	breakpoints
+
+js
+	DOM 제어
+	document>object - model
+		document 안에 object들의 tree 구조
+	css는 cascade 여서 부모:hover -> 자식만 됨
+		그래서 js 쓰는것
+
+	document.querySelector'All'() 로 해야 다 선택됨
+
+	dynamic programming
+		typescript는 js + type
+
+	실수 나눗셈 사용
+
+	elif 없으니 else if () 사요ㅗㅇ
+	
+	bool operator는 && || !
+
+	html 없이 사용시 터미널에서 "node path" 하면 됨
+
+	document.write("") 쓸때는 실제 document 가 필요
+
+	selector 로 찝으면 그건 object HTML**Element 임
+		그거의 .value 가 안에 값임
+		<script>function vavlidate(obj, lowval, hival) {if ((obj.value < lowval) \\ (obj.value > hival)) console.log('invalid')};</script>
+		<input type="text" onChange="validate(this, 18, 99);">
+		
+	DO 안에 value 넣는법
+		.textContent
+		.innerHTML -> tag 사용 가능
+
+	for (step;, lim;, next;) 인데 step과 next에 arr 들어갈 수 있음
+
+	포매팅은 `${}` 백틱
+
+
+hover 어떻게 없앴지
