@@ -1,0 +1,10 @@
+mobile detect js
+
+크롬에서 개발자 도구에서 폰으로 바꾸는것만으로 header가 폰으로 뜬다
+
+const md = new MobileDetect(window.navigator.userAgent);
+if(md.mobile()) {
+	location.href = "m/html";
+} else {
+	location.href = "pc/html";
+}

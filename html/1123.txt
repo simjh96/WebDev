@@ -1,0 +1,21 @@
+javascript는 def 즉 function 선언문도 return이 됨...
+ -> function 자체가 리턴됨(자료형 취급)
+      const testExec = function ( ) {
+        console.log("1");
+      };
+      testExec();
+
+이건 function declaration이 아니라 function expression이라서 hoisting 이 안됨!
+(추천)
+function () {} 대신 () => {} 으로도 씀
+
+
+setInterval(func, inter); -> 자동실행
+
+let i = 0;
+
+- let num = i++; 0 : 1
+- let num = ++i; 1 : 0
+	일단 할당 연산자를 넘길수있다는게 웃기네
+
+for문에 let i 쓰네
