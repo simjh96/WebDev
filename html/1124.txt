@@ -1,0 +1,58 @@
+primitive vs reference
+
+class 선언시
+	const 이름 = {key:value, :,}
+	json은 {"key":"value"}
+
+	근데 new Func(arg); 로 생성도 가능 ㅋㅋㅋ
+		Car1 = new Car(arg);
+
+css에서 background-color -> js에서는 backgroundColor 로 써야 먹음
+	애초에 - 를 변수명에 못 붙임
+
+animation은 gsap의 .to, .from, .fromTo 쓰는게 유용
+
+gsap에서 selector는 all을 잡아주는데 stagger로 
+	delay의 차이를 줄 수 있음
+
+for (var x in 객체) { }
+	key 값이 들어옴
+	
+
+npm zip 받으면
+	dist(배포용) 폴더에 .css 와 .js 하나 씩 들고 오면 된다
+	
+DOM
+	ele1.appendChild(ele2);
+	ele2.innerHTML = '~';
+		-> 알아서 ele
+
+Array.sort(fucntion(){});
+	call back 안넣으면 앞자리만 sorting 됨
+
+DOM.obj.value <- js에서 직접 참조하는건 좋지 않음
+주로 <div value="~"> 로 넣어서 참조함
+
+function () {} -> this 가 binding 됨
+() => {} -> this 가 binding 안됨
+
+event 기다릴때 while loop 말고
+	addEventListener(event, callback);
+
+
+
+minified는...? 왜 다넣지? 연결된건가
+	js랑 css만 넣으면 되긴함
+
+const? let? function?
+	하나로 선언하면 다른 하나로 선언 못함
+	저장 방식이 다른건가?
+		- 완전 동일
+classList = log 찍힌대로 +1 list 인가...?
+	classList가 return 을 DOM 머시기로 주고 읽기 전용이라
+	할당 안됨
+		근데 value가 바뀌긴 함
+for문에서 마지막 i++ 뒤에는 ; 안들어가고
+	function 안에서 for 쓸때 for의 {} 뒤에 ; 안들어감..?
+줄바꾸기 어떻게 하지???
+	- 상관 없음
