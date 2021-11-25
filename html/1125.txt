@@ -1,0 +1,5 @@
+user-select: none
+
+setInterval( ) 같은건 js 가 아니라 web api임!!
+
+=== 와 object.is 와 같음
