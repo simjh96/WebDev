@@ -1,0 +1,29 @@
+.value : form 요소의 value
+.innerHTML : 전체 render
+.innerText : 전체 render 후 display 적용 되는 문자만
+.textContent : 전체 text/ 오히려 form에서는 이게 안먹힘
+
+
+
+wordList3.forEach(function (e, i) {console.log(this)}, this);
+	-> this === window
+		직접 줄때 빼고는 다 window인듯
+
+
+
+
+wordList3.forEach(function (e, i) {console.log(this)}, arr 암거나);
+	-> this === 진짜 지정하는대로 다 나옴
+	-> 근데 e 는 this.e 가 아니라 wordList3.e 가 나옴
+
+.map((e, i) => if condition return/ else return)
+===
+.map((e, i) => condition ? return : return)
+
+
+font: inherit 이거 없애려면 어떻게
+	그냥 덮어쓰면 됨.. 안되는거 없고 철자 틀림
+element.style.??  intellisense 어떻게 키지?
+	ㅋㅋ 그러게 fontWeight 죽어도 안보이네
+ctrl click 했는데 src 왜 안보이지? Splitting
+	ㅋㅋ 모름
