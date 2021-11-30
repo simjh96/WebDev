@@ -1,0 +1,44 @@
+ajax (asynchronous js and xml)
+	요즘은 json 사용
+	소켓통신과 다르게 비동기
+	
+	사용법
+		xhrRequest
+		axios 라이브러리/ jQuery/ ...
+
+axios
+	promise 기반 request
+	axios.get(url).then(function (response) {})
+
+	Access-Control-Allow-Origin
+		cors(cross origin resource): CORS or cross origin resource sharing is blocked (in javascript APIs) in modern browsers by default
+			두가지가 만족 되어야 이런일이 안생김
+				1. response 의 Access-Control-Allow-Origin 이 내 request ip와 같을것
+				2. 해당 ip가 localhost 가 아닐것
+					이런 경우 preflight response의 Access-Control-Allow-Origin 를 * 한줄을 더 추가하는 plugin을 설치함으로 cors 보안 회피
+
+	axios는 res를 .data에 다 넣어놓음
+
+api
+	주로 _type=json 주면 변환됨
+	service key 말고
+		header의 authorization에 붙여 넣는 방식도 있음
+
+
+postman workspace 사용
+	get 이외의 방식들 사용 가능해짐
+
+allow cors
+	Access-Control-Allow-origin 을 * 으로 놓아서 cors 허용을 목표로함
+
+
+카카오개발자
+	product
+		search
+
+
+크롬 개발자 툴
+	application>local storage
+		데이터 잠시 저장해두는곳
+		localStorage.setItem("resentSearchWord", JSON.stringify(writtenWordArray));
+		str으로 저장 돼야 함
