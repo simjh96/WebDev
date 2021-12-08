@@ -66,4 +66,13 @@
       }
     }
   }
+  #news {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .main_newsroom_list {
+      display: flex;
+    }
+  }
 }
