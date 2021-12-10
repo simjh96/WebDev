@@ -1,0 +1,12 @@
+gsap.timeline() 에 chaining으로 여러개 animation 묶어줄수 있음
+	딱 묶기 용도로 쓰임
+
+CSSRulePlugin.getRule()로 css 덮어 쓸 수 있음
+
+splat operators (*args, *kwargs)
+	function fn (...args) { console.log(args) } 로 다 볼 수 있음
+
+ajax 쓸때는 외부 패키지의 function 쓸때 then 안에 써야함!
+	주로 html을 ajax로 불러온 후에 작업이 들어가는것임으로 async 를 고려해서 해야함
+
+background-attatchment: fixed 로 scroll에 무관하게 만들 수 있음
