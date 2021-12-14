@@ -1,0 +1,64 @@
+location 할당 하는것만으로 보낼수 있음
+
+scroll event 로 listener 달게 되면 스크롤 하는 과정에서 async 생김
+왠만하면 event 들어올때마다 this.상태 확인하고 동작하는 동적식 말고 
+event 생길때마다 누적된 값으로 고정값 계산해서 목표 값 구하는거 구해라
+
+이벤트 위임(event delegate)
+	async 하게 element 채워넣는 경우 (ul 안에 li 채워 넣을때)
+	let ele = $("ul li") 할때 undefined만 가져가는 경우가 많다
+	그럴때는 기존에 있는 부모 ele에 event 걸고 위임 지정해 주면 됨
+	$(parent).on(events [,selector] [,data], handeler)
+		selector -> 위임 받을 대상
+		data -> event.data에 넣을것
+
+perspective
+	소실점 각 child 마다
+.child{
+   transform: perspective(100px) rotateY(52deg) rotateZ(47deg);
+}
+
+	소실점 부모에서 하나
+.parent{
+   perspective:200px;
+   perspective-origin:47% 36%;
+}
+.child{
+   transform: rotateZ(90deg);
+
+}
+
+parent {perspective : 500px
+	child {transform-style : preserve-3d}	# 부모의 perspective 그대로 물려받아서 손자를 관찰함
+}
+
+
+삼항연산자
+cond? fetch : catch
+
+360도 회전
+<box>
+	<front></front>
+	<back[style="transform=rotateY(180deg)"]></back>
+</box>
+
+front back 내용에 translate z 까지 주면 입체감 생김
+
+
+
+jq 왜 .css 없는지
+	있다! -> 근데 prototype으로 있다
+
+마진 왜 생기는지?
+	transform 했으니까 남아있음
+
+왜 크기 변하면 다른 요소들도 변하는지?
+	position을 absolute로 만든 후에 top, left 지정 안해주면
+	relative로 남아 있게됨
+
+gsap 변하는거 따라 변하게 할 수 없는지?
+	gsap 애니메이션을 끌려면 kill() 이 있고
+	event를 끌려면 조건문 사용
+	
+perspective 랑 동기화 한 외부 좌표 syncing
+	https://www.inflearn.com/course/interactive_web?inst=aa9bdce7#curriculum
