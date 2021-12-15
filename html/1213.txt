@@ -1,0 +1,9 @@
+tweener
+	gsap.to, .from, fromto 등등 모든 애니메이션은 결국
+	timeline에 chorio를 찍는건데 이 해당 obj를 tween이라 부름
+
+destroy
+	ajax 부를때마다 api들 사용하는데
+	이는 api가 중복적으로 불러오는 결과가 생길 수 있음
+		매번 destroy를 하지 않으면
+		계속 스택에 누적됨
