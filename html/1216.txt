@@ -1,0 +1,43 @@
+.eq()
+.find()
+.trigger()
+.siblings()
+.setInterval(callback, step)
+
+
+쓸만한 사이트
+	opencolor
+	humaans
+	google material
+	swiper.js
+	isotope.js(filter&sort&layout)
+	fullscreen.js
+	fancyapp	
+	gdweb	
+
+
+ajax 쓰면 항상... 나중에 불러와 진다고 생각하자.... 
+관련 코드는 다 success 안에 넣어야지 안그러면 다 빈칸에 적용됨
+	또한 image 도 늦게 로딩됨으로.... 로딩후에 layout 적용 되는 경우
+	$(로딩중인 container).imagesLoaded(callback) 사용하는것이 좋음
+
+
+offset, client, position ... 등등 있는데
+	화면 기준이면 client 쓰고
+		나머지는 주로 부모 기준이나 스크롤까지 고려된 html 기준임
+
+gsap.killTweenOf()
+
+
+gsap.scrollTrigger
+	start : "trigger 기준 좌표    전체 화면(view port) 기준 좌표" -> 두개가 만나면 애니메이션 시작됨
+		start와 scroller start 가 만나게 설정
+	end: scrub 넣으면 end에 맞춰서 끝내줌 "trigger 기준 좌표    전체 화면 기준 좌표"
+		"top-=10px 1000px"
+
+	pin: true -> 내려갈때까지 고정됨
+
+	toggleAction:"처음 진입하고나서/ 나가고 나서/ 다시 들어가고 나서/ 다시 나가고 나서"
+
+	toggleActions	String - Determines how the linked animation is controlled at the 4 distinct toggle places - onEnter, onLeave, onEnterBack, and onLeaveBack, in that order. The default is play none none none. So 
+		toggleActions: "play pause resume reset" will play the animation when entering, pause it when leaving, resume it when entering again backwards, and reset (rewind back to the beginning) when scrolling all the way back past the beginning. You can use any of the following keywords for each action: "play", "pause", "resume", "reset", "restart", "complete", "reverse", and "none".
