@@ -1,0 +1,19 @@
+<form action="" method="post">
+	<button type="submit">
+
+
+blur 줄때
+&::before { 공간 만들어주고 }
+&::after {left,right,top,bottom : 0, bgc:blur 로 블러 준다}
+
+
+position
+	position: absolute나 fixed 주는 순간 layout 이 띄워짐으로
+	parent가 position이 있지 않는한 상속 끊김
+	height width viewport 기준으로 100% 가능
+		근데 아래 요소가 마진 top 있으면 아래로 끌고 내려가짐
+		position 자체가 default 잡혀서 top:0 해줘야함
+
+
+js로 effect 넣을때
+	왠만하면 class .on 같은거 add 해서 &.on으로 scss에서 받는걸로 설계

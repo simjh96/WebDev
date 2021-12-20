@@ -1,0 +1,28 @@
+* {
+  border: 1px solid red;
+}
+
+.wrap {
+  margin: auto;
+  width: 50vh;
+  height: 50vh;
+  display: flex;
+  flex-flow: column;
+}
+
+.y {
+  border: 1px solid blue;
+  height: calc(100% - (10px * 6 / 5));
+  display: flex;
+
+  .x {
+    display: flex;
+    margin: 10px;
+    width: calc(100% - (10px * 6 / 5));
+    justify-content: center;
+    align-items: center;
+    &.selected {
+      background-color: red;
+    }
+  }
+}
