@@ -1,0 +1,11 @@
+{
+  "myName": "심재훈",
+  "myAge": "28",
+  "fruits": ["banana", "apple", "kiwi"],
+  "items": [
+    {
+      "category": "Classic",
+      "title": "dfsfdsf"
+    }
+  ]
+}

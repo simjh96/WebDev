@@ -1,0 +1,23 @@
+#main .section {
+  background-repeat: no-repeat;
+  background-position: right 100px top 50%;
+  background-size: 500px;
+  background-attachment: fixed;
+}
+
+#main .section .info {
+  padding-left: 100px;
+  color: #fff;
+}
+
+#main .section .info .category {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#main .section .info .title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+}

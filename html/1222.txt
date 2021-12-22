@@ -1,0 +1,20 @@
+javascript
+	if you use curly braces you need to explicitly mention "return"
+	where () => () will automatically put "return" on arrow function
+
+
+형변환은 (char) (ch + 1) 이런식으로
+do while 문도 있음
+
+String은 pool이 따로 있어서 new 안쓰는게 맞음
+
+int arr[] = new int[10];
+	길이랑 형 정해놓고 써야함
+	{1,2,3} 쓰면 같은건데 길이 3짜리 만들고 넣는 과정 단축됨
+		... 잘 안씀
+
+
+
+
+
+try catch (Exception e) {e.printStackTrace();}

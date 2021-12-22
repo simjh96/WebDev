@@ -1,0 +1,64 @@
+svg {
+  position: absolute;
+  top: 0;
+  width: 50vh;
+  height: 50vh;
+  pointer-events: none;
+}
+
+.wrap {
+  margin: auto;
+  width: 50vh;
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.row {
+  height: calc(100% - (10px * 6 / 5));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.row .tile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px;
+  width: calc(100% - (10px * 6 / 5));
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.row .tile.selected {
+  background-color: red;
+}
+
+.row .tile.hide {
+  display: none;
+}
+
+.row .tile.block {
+  border: 3px solid rgba(165, 42, 42, 0.89);
+  -webkit-box-shadow: 1px 1px 3px rgba(124, 32, 32, 0.89);
+          box-shadow: 1px 1px 3px rgba(124, 32, 32, 0.89);
+}
+
+.row .tile.block:hover {
+  -webkit-transform: scale(101%);
+          transform: scale(101%);
+  border: 3px solid rgba(165, 147, 42, 0.89);
+  -webkit-box-shadow: 1px 1px 3px rgba(124, 111, 32, 0.89);
+          box-shadow: 1px 1px 3px rgba(124, 111, 32, 0.89);
+}

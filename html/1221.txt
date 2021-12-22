@@ -1,0 +1,41 @@
+jdk.java.net   jdk 11 window
+
+.java 파일 실행 명령 하기 위해 환경변수(path)에 넣어줘야함
+   bin파일까지
+      c:\java_work\jdk-11\bin
+
+java --version 으로 check
+
+eclipse
+   2021-12/R/eclipse-inst-jre-win64.exe
+
+eclipse ide for enterprise 설치(java ee 두번째)
+java 11 + ve -> 내 java 폴더 있는곳에
+
+오른쪽 위에 커피콩(java ee default)(웹개발) -> open perspective 누르고(바로 왼쪽 단추 -> java로 변경)
+
+
+.java 파일 만들때
+
+.java 만들기 .class 만들기
+superclass: java.lang.Object
+v main 1
+v inherit abstract 3
+
+system.out.println
+
+
+
+ctrl f11 ->run
+
+
+java -eclipse(.class 로 compile)-> jvm -각 부분에 맞는 binary 명령으로 compile-> os(window)
+
+모든건 class 안에서 이루어짐
+   class 는 무조건 pascal -> 첫글자 대문자
+
+memory  영역 static heap stack
+
+scan.nextType()
+
+\

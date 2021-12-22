@@ -1,0 +1,27 @@
+@import "vars";
+@import "mixins";
+
+#main {
+  .section {
+    background-repeat: no-repeat;
+    background-position: right 100px top 50%;
+    background-size: 500px;
+    background-attachment: fixed;
+    .info {
+      padding-left: 100px;
+      color: #fff;
+      .category {
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .title {
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+      }
+      .depth {
+      }
+    }
+  }
+}
