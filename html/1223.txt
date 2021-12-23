@@ -1,0 +1,37 @@
+public class Circle {
+	public int radius;
+	public String name;
+	public Circle() {} <-- 이게 init
+	public double getArea() {
+		return 3.14*radius*radius
+	}
+}
+
+
+생성자 함수는 void 적을 필요 없음
+overloading
+overriding
+
+
+# 외부에 두르는 함수 넣고 싶으면 static으로 선언해
+그러면 시작부터 컴파일됨
+public class CircleTest {
+	static void increase(Circle circle) {
+		circle.radius++;
+	}
+	public static void main(String[] args) {
+		Circle pizza = new Circle();
+		pizza.radius="20";
+		increase(pizza);
+	}
+}
+
+
+private 기준은 package 기준임 그 안에서는 상관 없이 사용함
+	그래서 getter setter 가 작동 가능함
+	해당 attribute는 검색이 안됨
+
+static의 경우에는 obj 멤버가 아닌 class 멤버임
+	instance에서 찾는게 아니라 class 자체에서 찾아야함
+	import 하는 순간 생성됨
+		Math.abs
