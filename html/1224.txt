@@ -1,0 +1,27 @@
+상속 선언
+	class A extends B {}
+
+	scope를 default 로 선언한건 접근이 안됨(다른 패키지)
+
+alt + shift + s 로 getter setter 만들기 || lombok 으로 getter setter 자동 생성
+
+파일 하나에 class 여러개 만들 수 있는데
+범위 지정은 못함 (public 같은거)
+
+
+
+instance of 
+	다형성 하고 싶을때 input param을 넓게 받아야하는데
+	obj 으로 하면 너무 넓으니까
+	주로 super의
+
+
+	upcasting
+		형변환 없이도 super 메모리에 할당 가능	
+		Person person
+		Student student
+		person = student
+	downcasting
+		형변환 후 child 메모리에 할당 가능
+		Person person = new Student("x")
+		student = (Student) person
