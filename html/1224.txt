@@ -9,7 +9,8 @@ alt + shift + s 로 getter setter 만들기 || lombok 으로 getter setter 자�
 범위 지정은 못함 (public 같은거)
 
 
-
+(오버라이딩 조건)
+https://www.codejava.net/java-core/the-java-language/what-is-upcasting-and-downcasting-in-java
 instance of 
 	다형성 하고 싶을때 input param을 넓게 받아야하는데
 	obj 으로 하면 너무 넓으니까
@@ -25,3 +26,24 @@ instance of
 		형변환 후 child 메모리에 할당 가능
 		Person person = new Student("x")
 		student = (Student) person
+
+
+동적 바인딩 -> compile 단계가 아니라 runtime에서 결정됨
+	ex) 메소드 오버라이딩
+	@Override <annotation>
+
+오버라이딩의 조건
+자바에서 메소드를 오버라이딩하기 위한 조건은 다음과 같습니다.
+
+ 
+
+1. 오버라이딩이란 메소드의 동작만을 재정의하는 것이므로, 메소드의 선언부는 기존 메소드와 완전히 같아야 합니다.
+
+    하지만 메소드의 반환 타입은 부모 클래스의 반환 타입으로 타입 변환할 수 있는 타입이라면 변경할 수 있습니다.
+
+2. 부모 클래스의 메소드보다 접근 제어자를 더 좁은 범위로 변경할 수 없습니다
+
+3. 부모 클래스의 메소드보다 더 큰 범위의 예외를 선언할 수 없습니다.
+
+오버라이딩을 전제로
+abstract class 추상 메소드를 만들어 놓고 선언만 해놓는 방법이 있다
