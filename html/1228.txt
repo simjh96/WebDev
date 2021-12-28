@@ -1,0 +1,30 @@
+
+
+Collection<>
+	객체들의 저장소
+	ArrayList
+
+		ArrayList list = new ArrayList<String>();
+		list.add("a");
+		list.add(1);    // OK
+		list.add(new Object());  // OK
+
+		이건 되는데
+		ArrayList<String> list = new ArrayList<String>();
+		일 경우는 안됨 ㅋㅋ string 만 들어가짐
+
+Map<>
+	HashMap
+
+
+generic
+	collection이나 map은 다 객체만 담을 수 있기 때문에
+		(allocation by address인데 기본 type은 heap에 연결이 아님)
+	<int> 말고 <Integer> 써야함
+
+
+ctrl +shift + o -> auto import
+alt + shift + s -> 기타 generator options
+
+모든 자료들은 자료형과 함께 선언 후 사용해야하지만
+	기본형들 + string은 그냥 써도 됨

@@ -1,0 +1,13 @@
+package timeGap;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class InputTest {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		ArrayList<String> al = new ArrayList();
+		al.add("WTF")
+		System.out.println(al);
+	}
+}

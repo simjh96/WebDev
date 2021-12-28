@@ -1,0 +1,37 @@
+package lecture;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+class Point1 {
+	private int x,y;
+
+	public Point1(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+
+	@Override
+	public String toString() {
+		return "Point [x=" + x + ", y=" + y + "]";
+	}
+	
+	public boolean test() {
+		return true;
+	}
+
+}
+
+public class PointVectorTest {
+	public static void main(String[] args) {
+		Point1 newPoint = new Point1(10,10);
+		System.out.println(newPoint);
+		System.out.println(newPoint.test());
+		
+		ArrayList al = new ArrayList<String>();
+		al.add("foo1");
+		al.add("foo2");
+		Iterator it = al.iterator();
+		System.out.println(it);
+	}
+}
