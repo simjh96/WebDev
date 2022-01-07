@@ -1,0 +1,31 @@
+ArrayList<안적으면 object> arrli
+
+arrli.get(i) -> type == object
+	들고 나올때 down casting 해주는게 좋음
+
+interface can never be instantiated;
+	but by anonymous inner class, you can just-in-time create class and
+	instantiate it
+
+	Interface1 i = new Interface1() { public void method1() {over ride it} }
+
+
+
+javascript 상속
+
+function Teacher(...) {
+	Person.call(this, ...);
+}
+
+call의 첫 인자가 context를 줌
+	call은 생성자 함수 자신에 대한 참조만 줌으로
+	prototype은 Teacher.prototype = Object.create(Person.prototype);
+	넣어줘야함
+		근데 Person.prototype.constructor가 Person으로 setting 되어 있으니
+		Teacher.prototype.constructor = Teacher 해줘야함
+
+	new Person();
+		할때 이루어지는 과정이 위와 같음(new == syntatic suger)
+		자신에 대한 참조와 prototype 연결 해줌
+		
+		애초에 class 라는게 없음, 오직 function 뿐임

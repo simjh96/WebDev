@@ -6,9 +6,19 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
+		<item key="selection" value="chicken"/>
 		<list key="findhistory">
+			<item value="chicken"/>
+			<item value="JCheckBox"/>
+			<item value="southPanel"/>
+			<item value="centerPanel"/>
+			<item value="northPanel"/>
 		</list>
 		<list key="replacehistory">
+			<item value="bullet"/>
+			<item value="JRadioButton"/>
+			<item value="this"/>
+			<item value="southPanel"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

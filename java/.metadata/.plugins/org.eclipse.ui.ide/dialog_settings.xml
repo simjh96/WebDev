@@ -13,6 +13,10 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\USER\WebDev\java\java-ch13"/>
+			<item value="C:\Users\USER\WebDev\java\java-ch10"/>
+			<item value="C:\Users\USER\WebDev\java\java-ch08"/>
+			<item value="C:\Users\USER\WebDev\java\java-ch07"/>
 			<item value="C:\Users\USER\WebDev\java\ch05"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

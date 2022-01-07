@@ -1,0 +1,23 @@
+thread
+	multi thread는 multi processing 과 다름
+	thread 는 하나의 process 안에서 독립적으로 존재함으로
+		process안의 메모리와 자원을 공유함
+	
+	extends Thread로 객체 생성후
+	this.start()로 JVM 의 스케쥴러에 등록함으로 .run() 실행
+		run을 Thread에서 overriding 해도 되고
+		Runnable instance를 인자로 주면 자동으로 run 교체 해줌
+
+	TCB(Thread Conntrol Block)	
+		필드: 스레드 이름, 스레드 ID, 스레드 Program Counter, 스레드 상태(new, runnable, waiting... 등등), 스레드 우선순위, 스레드 그룹, 스레드 레지스터 스택
+
+	Daemon Thread
+		daemon thread vs user thread
+		응용프로그램 실행동안 관리를 위해 실행되는 (ex: garbage collector)
+		사용자 스레드가 모두 종료되면 자동으로 종료됨
+
+
+Container
+	Component 담을 수 있는 그릇
+	.repaint와 .setFocusable() 등을 사용 가능
+		key press 받으려면 focusable true 해줘야함
