@@ -1,0 +1,63 @@
+stream
+always close a stream! as it is lazy and open to new inputs or operations
+
+
+A stream is a sequence of data.
+	always a copy
+	usually used for pipelining (manipulation: sort, filter, match 등)
+	lazy
+
+Collections are primarily concerned with the efficient management of, and access to, their elements. By contrast, streams do not provide a means to directly access or manipulate their elements, and are instead concerned with declaratively describing their source and the computational operations which will be performed in aggregate on that source.
+
+ex
+map: The map method is used to returns a stream consisting of the results of applying the given function to the elements of this stream.
+List number = Arrays.asList(2,3,4,5);
+List square = number.stream().map(x->x*x).collect(Collectors.toList());
+filter: The filter method is used to select elements as per the Predicate passed as argument.
+List names = Arrays.asList("Reflection","Collection","Stream");
+List result = names.stream().filter(s->s.startsWith("S")).collect(Collectors.toList());
+sorted: The sorted method is used to sort the stream.
+List names = Arrays.asList("Reflection","Collection","Stream");
+List result = names.stream().sorted().collect(Collectors.toList());
+
+
+입출력 stream
+
+io 에서 정보 하나씩 입출력 하는것보다(block 단위 io기 때문)
+buffer 이용해서 큼직큼직하게 들고 오는게 훨씬 빠르다
+
+Buffered input streams read data from a memory area known as a buffer; the native input API is called only when the buffer is empty. Similarly, buffered output streams write data to a buffer, and the native output API is called only when the buffer is full.
+buffer flush 를 같이 써야함
+
+The disc access (transferring data to disk) does not happen byte-by-byte, it happens in blocks. So, we cannot conclude if that the time taken for writing 1 byte of data is 1 ms, then x bytes of data will take x ms. It is not a linear relation.
+
+The amount of data written to the disk at a time depends on block size. For example, if a disc access cost you 1ms, and the block size is 512 bytes, then a write of size between 1 to 512 bytes will cost you same, 1 ms only.
+
+So, coming back to the eqation, if you have , say 16 bytes of data to be written in each opeartion for 20 iteration, then,
+
+for direct write case
+time = (20 iteration * 1 ms) == 20 ms.
+
+for buffered access
+time = (20 iteration * 0.5 ms (bufferring time)) + 1 ms (to write all at once) = 10 + 1 == 11 ms.
+
+
+os 관여하는 stream 이기 때문에 js로 하려면 node를 사용해야함
+
+
+입력 스트림		출력 스트림		입출력 대상
+FileInputStream		FileOutputStream		파일
+ByteArrayInputStream	ByteArrayOutputStream	메모리
+PipedInputStream		PipedOutputStream	프로세스
+AudioInputStream		AudioOutputStream	오디오 장치
+
+Stream				입력		출력
+문자 기반 스트림 (Character 계열)	Reader		Writer
+바이트 기반 스트림 (Byte 계열)	InputStream	OutputStream
+
+영어빼고는 대부분 16bit(char stream) 임, 영어만 8bit(byte stream) 사용 가능
+
+
+Serialization
+	object -pack-> bit -unpack-> object
+

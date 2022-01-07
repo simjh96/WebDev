@@ -1,0 +1,23 @@
+package practice;
+
+import java.util.Scanner;
+import java.util.Vector;
+
+public class Chap0704 {
+	public static void showRainAvg(Vector<Integer> vector) {
+		int sum = 0;
+	}
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		Vector<Integer> vector = new Vector<>();
+		while(true) {
+			System.out.println("강수량 입력");
+			int rainAmount = scanner.nextInt();
+			if (rainAmount==0) break;
+			vector.add(rainAmount);
+			showRainAvg(vector);
+			}
+		}
+	}
+}
