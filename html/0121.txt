@@ -1,0 +1,69 @@
+eclipse perspective: to -> java ee
+switch workspace
+new -> dynamic web project
+servers -> apache/ tomcat v9.0
+window -> preference -> enc -> utf 8
+
+servers>tomcat>server.xml>source>port= to 8090
+src>main>webapp>hello.jsp
+
+
+servlet
+	그냥 java class 여서 .java로 만듦
+	src/main/java/com.simjh96.chap01/Menu.java 이런식으로
+www.sth.com/menu.php 같은게 php는 브라우저가 그냥 먹어주는데
+자바는 안됨
+그래서 @WebServlet("/menu") 로 match 시켜줘야함
+
+public class Menu extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	public Menu() {
+		super();
+	}
+	protected void doGet(HttpSeervletRequest request, HttpServletResponse response) throws Serv...
+		PrintWriter out = response.getWriter();
+		out.println("<html><body>hello</body></html>");
+}
+
+doGet은 get 방식 요청
+doPost는 post 방식 요청시 할당될 method
+
+예전에는 servlet 밖에 없어서 다 out.println() 으로 처리 했는데
+이제는 html 파일에 java 쓸수 있는 jsp 사용
+	이건 브라우저에서 읽어서 /menu.jsp 사용 가능
+
+? 뒤에 parameter 보내주는거 받는법
+doGet 안에 int num01 = Integer.parseInt( request.getParameter("num01"));
+	이래놓고 param 안보내면 내부서버 오류로 NumberFormatException: null 뜸
+이렇게 param 받아서 ojdbc 사용해서 로그인 정보같은거 불러옴
+
+
+servlet이나 jsp로 창 띄워 -> param 받아 -> ojdbc로 조회해 -> response로 보내
+
+header 정보 줄 수 있음
+	response.setContentType("text/html")
+	response.setCharacterEncoding("UTF-8")
+
+LifeCycle
+	init -> destroy
+	int initCount = 0;
+	init doGetCount = 0;
+	int destroyCount = 0;
+
+	public void init(ServletConfig config) throws ServletException {
+	}
+
+form tag
+	<form method="get" action="menu"><input name="user_name" value="simjh96"><button>get</button></form>
+
+	action="RadioServlet.do" 에서 do는 확장자가 아님... "*.do" 쓰려고 붙여놓은것
+
+
+
+받을때
+	request.getParameter("user_name")
+
+보낼때 받을때 둘다 encoding 명시 해줘야함(for sure)
+	response.setCharacterEncoding
+	request.setCharacterEncoding
+

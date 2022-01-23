@@ -1,0 +1,11 @@
+\n 안쓰면 readLine에서 못받네...
+
+
+stream
+	processed one by one (range infinite)
+	https://docs.oracle.com/javase/tutorial/essential/io
+
+socket
+	one endpoint of a two-way communication link
+	https://docs.oracle.com/javase/tutorial/networking/sockets/definition.html
+
