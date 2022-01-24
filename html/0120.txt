@@ -1,0 +1,17 @@
+JDBC(JAVA DATABASE CONNECTION)
+	서버랑 db를 연결할 driver 가 필요
+	dbms 회사에서 제작해서 줌
+
+mvn repository: java lib main repo
+npm repository: node js lib main repo
+
+.jar -> java archive file
+
+JAVA project> build path > configure build file> add JARs > ojdbc6.jar
+
+
+Class.forName("oracle.jdbc.OracleDriver");   // initialize oracle driver
+Connection conn =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","scott", "tiger");
+Statement stmt = conn.createStatement();
+ResultSet rs = stmt.executeQuery("SELECT * FROM EMP;");
+

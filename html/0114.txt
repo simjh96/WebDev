@@ -1,0 +1,7 @@
+.gitignore
+
+내용:
+*.zip
+Wallet_DB20220113.zip
+node_module
+등등

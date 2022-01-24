@@ -6,8 +6,15 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="chicken"/>
+		<item key="selection" value="paintCom"/>
 		<list key="findhistory">
+			<item value="paintCom"/>
+			<item value="paint"/>
+			<item value="inter"/>
+			<item value="enemy"/>
+			<item value="playerBullet"/>
+			<item value="draw"/>
+			<item value="paintComponent"/>
 			<item value="chicken"/>
 			<item value="JCheckBox"/>
 			<item value="southPanel"/>
@@ -15,6 +22,9 @@
 			<item value="northPanel"/>
 		</list>
 		<list key="replacehistory">
+			<item value="heal"/>
+			<item value="player"/>
+			<item value="enemy"/>
 			<item value="bullet"/>
 			<item value="JRadioButton"/>
 			<item value="this"/>

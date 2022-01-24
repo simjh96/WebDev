@@ -1,0 +1,29 @@
+swing 에서 paint는 무조건 한번만 불러옴!
+	repaint를 다시 불러야하는데
+	애니메이션처럼 계속 repaint를 할거면 재귀형식으로
+	paintComponent(Graphics g){ g.draw(); repaint(); } 하면 꾸준히 불러짐
+
+	대신 다른거 못하니까 thread 불러와야함
+
+public class MyClass {static void main(){
+	여기는 static 영역이여서 MyClass 내부에서 만든 class는 사용 못함!
+}} 
+
+
+
+
+java
+
+class Solution {
+    public int[] solution(int[] progresses, int[] speeds) {
+    	int[] answer = {1,2};
+        return answer;
+    }
+    public static void main(String[] args) {
+    	Solution sol = new Solution();   -> main이 static 이여서 안만들어주면 같은 class 안 메소드 못씀 ㅋㅋ, 아니면 애초에 static으로 만들던가
+//    	int[] progresses = {93, 30, 55};
+//    	int[] speeds = {1, 30, 5};
+    	
+		System.out.println(sol.solution({93, 30, 55}, {1, 30, 5})); -> 여기서 리터럴 쓰면 오류남 ㅋㅋㅋ
+	}
+}
