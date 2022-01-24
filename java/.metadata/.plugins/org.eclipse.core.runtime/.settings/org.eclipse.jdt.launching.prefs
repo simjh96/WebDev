@@ -1,0 +1,5 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=adcd5be8e25422d5a1ce912d221797d1bb211a75
+eclipse.preferences.version=1
+org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1641520466272" defaultVMConnector\="">\r\n    <vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n        <vm id\="1641520466272" name\="jdk-11" path\="C\:\\Users\\simjh96\\jdk-11"/>\r\n    </vmType>\r\n</vmSettings>\r\n

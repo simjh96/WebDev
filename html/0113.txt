@@ -1,0 +1,15 @@
+11gxe
+서비스에서
+	oracleserviceXE랑 oracleXETNSlistener 실행중이여야함
+
+id: system
+pw: 104902gh
+sqlplus / as sysdba
+id: SYS
+pw: 104902gh
+
+@C:\oraclexe\app\oracle\product\11.2.0\server\rdbms\admin\scott.sql;
+ALTER USER scott IDENTIFIED BY tiger;
+
+conn scott/tiger;
+show user;

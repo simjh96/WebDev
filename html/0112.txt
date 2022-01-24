@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 swing 에서 paint는 무조건 한번만 불러옴!
 	repaint를 다시 불러야하는데
 	애니메이션처럼 계속 repaint를 할거면 재귀형식으로
@@ -27,3 +28,16 @@ class Solution {
 		System.out.println(sol.solution({93, 30, 55}, {1, 30, 5})); -> 여기서 리터럴 쓰면 오류남 ㅋㅋㅋ
 	}
 }
+=======
+\n 안쓰면 readLine에서 못받네...
+
+
+stream
+	processed one by one (range infinite)
+	https://docs.oracle.com/javase/tutorial/essential/io
+
+socket
+	one endpoint of a two-way communication link
+	https://docs.oracle.com/javase/tutorial/networking/sockets/definition.html
+
+>>>>>>> 52bd89f071d5e87e2b0152758db7f116ab254b38
