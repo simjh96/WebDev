@@ -1,0 +1,58 @@
+jsp 실제로 compile 되면 out.print() 로 다 감싸져 있음
+그래서 if 문 안에도 들어갈 수 있는것!
+
+근데 java 구문 jsp에 잘 안쓰고 주로 src/main/java에 다 쓰고
+jsp를 forward 하는 방식으로 사용
+
+Cookie cookie = new Cookie("key", "value");
+cookie.setMaxAge(60*60*24);
+response.addCookie(cookie)
+
+브라우저에 cookie 가 들어감
+
+Cookie cookies[] = request.getCookies();
+if(cookies!=null) {
+	for(Cookie c : cookies) {}
+}
+
+근데 response request는 이미 페이지 열었을때 주고 받은 상태라서
+setCookie 보낸다 해도 request 값은 이미 받은 상태여서 getCookie 못함
+
+이후 브라우저에서 setCookie 명령 받아서 setting 다 해주고 이후 보내는 response에 해당
+cookie를 적어서 보내줌
+
+ajax를 통해 cookie 변경하는 방식을 많이 씀
+
+쿠키를 저장해 뒀다가 쿠키를 받아온 url 이나 subdomain(path로 이걸 지정해준다)
+에 다음 request를 보낼때 같이 보내준다
+
+
+세션 날리는법
+	session.invalidate();
+
+express language
+	<h1><% out.print("hello world") %></h1>
+	<h1><%= "hello world" %></h1>
+	<h1><% ${"hello world"}</h1>
+
+	ㅋㅋㅋ 근데 이거 private 한 변수도 접근 가능함
+	${dto[0].privateAttribute} 치면 그냥 나옴
+
+	${m.name}
+	does basically the same as the following in "raw" scriptlet code
+
+	<%
+	  Model m = (Model) pageContext.findAttribute("m");
+	  if (m != null) {
+	  String name = m.getName();
+	   if (name != null) {
+	    out.print(name);
+	   }
+ }
+%> 
+
+param 이라는 object 도 있네
+	param.name 으로 사용
+
+src/main/java/MemberDto.java
+	
