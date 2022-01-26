@@ -1,0 +1,49 @@
+package > properties > java build path > add library > server runtime
+
+주로 git으로 받아오는것들이 서버 런타임 경로가 다른곳에 있어서 인식이 틀려짐
+
+주로 build path 에 오류가 났다고 나오고 server runtime이 plain 하지 않고
+뒤에 (4) 같은게 붙어 있을 수 있다
+
+고쳐주고 project facets (다이아몬드를 구성하는 구조체: any of the definable aspects that make up a subject)
+에서도 runtime 제대로 바뀌어 있는지 확인해주자
+
+
+-- 계정 만들어 보기...
+CREATE USER TIS002 IDENTIFIED BY 1234;
+-- 권한 주기...
+GRANT CREATE SEQUENCE,CREATE SESSION, CREATE TABLE,CREATE VIEW, CONNECT , RESOURCE TO TIS002;
+CREATE TABLE MEMBER (
+    NO NUMBER(4) NOT NULL,
+    ID VARCHAR2(20) NOT NULL CONSTRAINT MEMBER_PK PRIMARY KEY,
+    PASSWORD VARCHAR2(50) NOT NULL,
+    NAME VARCHAR2(50) NOT NULL,
+    EMAIL VARCHAR2(100) NOT NULL,
+    PHONE VARCHAR2(15) NOT NULL,
+    ZIPCODE NUMBER(10) NOT NULL,
+    ADDRESS VARCHAR2(100) NOT NULL,
+    REGDATE DATE
+);
+CREATE SEQUENCE 도 해야함
+
+Statement 클래스
+
+- SQL 구문을 실행하는 역할
+
+- 스스로는 SQL 구문 이해 못함(구문해석 X) -> 전달역할
+
+- SQL 관리 O + 연결 정보 X
+
+
+
+PreparedStatement 클래스
+
+- Statement 클래스의 기능 향상
+
+- 인자와 관련된 작업이 특화(매개변수)
+
+- 코드 안정성 높음. 가독성 높음.
+
+- 코드량이 증가 -> 매개변수를 set해줘야하기 때문에..
+
+- 텍스트 SQL 호출

@@ -1,0 +1,75 @@
+jsp: model1 -> model2 MVC (model(java Data Transfer Object) view(jsp) controller(java))
+server: localhost:8090/chap03/expr.jsp
+
+내장 객체
+	out.println();
+		sublet out 이랑 동일
+	error
+	request
+		parameter 들은 여기 저장됨
+		근데 서버는 이걸 페이지 변경시 저장하지 않음(server는 stateless)
+			근데 로그인 정보 같은 경우는 페이지를 꺼도 저장이 되어 있음
+				이건 server의 session에 저장 되어 있는것
+				session = server에 저장되는 쿠키
+	response
+		response.sendRedirect("주소"); -> 잘 안쓰고 forward 씀
+			request.getRequestDispatcher(path); 를 통해 forward 날림
+
+			request.setAttribute("user_name", "장성호");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("login_success_forward.jsp");
+			dispatcher.forward(request, response);
+
+				url 은 그대론데 내용은 forward 받은곳
+				getParam 으로 안받고 getAttribute 로 받음
+				string 으로 안돌아오고 object로 받아와서 형변환 해줘야함
+					이건 http 통신이 아니라 서버 내부 통신임 
+				
+
+	session
+	pageContext
+	application
+
+
+	내장 객체 scope: pageContext.setAttribute < request.setAttribute < session.setAttribute < application.setAttribute
+		pageContext는 forward 하면 사라짐(거의 쓸일 없음)
+		request는 forward 이외에서는 사라짐
+		session은 session 만료되는곳(invalidate)에서 사라짐
+		application은 항상 살아 있음
+
+<% 변수만 선언 가능 %> scriptlet
+	<% if (true) { %>
+		<script></script>
+	<% } %>
+		어차피 java로 다 바뀔거라서 이런것도 가능
+
+
+<%! 변수 method 둘다 선언 가능 %> declaration
+<p><%= 변수 %></p>
+<%@ page import = "java.util.Calender"%> directive (지시어)
+	<%@ page errorPage = "error.jsp" %> 로 보내고 -> <%@ page isErrorPage = "true" %> 로 받는다
+
+
+
+
+jsp 는 결국 java 로 compile 됨 -> Web Application Server (tomcat) 이 java 읽고 응답해줌
+
+
+jstl: java server tag library
+	tag를 포함한 html 반복문 만들기 쉬움
+
+out.println("<script>alert('아이디 또는 비밀번호가 맞지 않습니다')</script>");
+response.sendRedirect("login_form.jsp");
+
+	javascript 돌아가게 해놓고 java 명령 바로 아래 보내면 alert 명령 실행 됨과 동시에 브라우저가 뒤로 돌아가져서
+	계획대로 안됨!
+	두줄 다 javascript로 돌게 해라
+
+
+한글 받을때는
+	request.setCharacterEncoding("UTF-8")
+	?user_name=" + URLEncoder("심재훈", "UTF-8")
+
+
+form 안의 button 은 기본적으로
+	type = "submit" 임
+	그래서 만약 button에 onClick 을 연결하고 싶으면 연결할때 function에 return false를 해야함
