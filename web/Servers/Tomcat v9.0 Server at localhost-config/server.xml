@@ -152,7 +152,11 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
+<<<<<<< HEAD
       <Context docBase="chap03" path="/chap03" reloadable="true" source="org.eclipse.jst.jee.server:chap03"/><Context docBase="chap02" path="/chap02" reloadable="true" source="org.eclipse.jst.jee.server:chap02"/><Context docBase="jsp-member" path="/member" reloadable="true" source="org.eclipse.jst.jee.server:jsp-member"/><Context docBase="Clone" path="/Clone" reloadable="true" source="org.eclipse.jst.jee.server:Clone"/><Context docBase="jsp-member-review" path="/member_review" reloadable="true" source="org.eclipse.jst.jee.server:jsp-member-review"/><Context docBase="prugio" path="/prugio" reloadable="true" source="org.eclipse.jst.jee.server:prugio"/></Host>
+=======
+      <Context docBase="jsp-member" path="/member" reloadable="true" source="org.eclipse.jst.jee.server:jsp-member"/><Context docBase="chap02" path="/chap02" reloadable="true" source="org.eclipse.jst.jee.server:chap02"/><Context docBase="chap03" path="/chap03" reloadable="true" source="org.eclipse.jst.jee.server:chap03"/></Host>
+>>>>>>> 65b4c2c29ec96af986240699f7e715bb967e900c
     </Engine>
   </Service>
 </Server>

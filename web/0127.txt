@@ -1,0 +1,22 @@
+web-inf>lib>이거 안에 ojdbc6.jar 필요
+
+pstmt.executeUpdate(); -> select 문은 executeQueary
+
+
+
+java 패키지 만들때(귀찮은건 다 객체 미리 만들어 놓던가 static 만들어 놔라)
+
+public class ScriptWriter {
+	public static void alert(HttpServletResponse response, String alertMsg) throws IOException {
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		out.println("<script>");
+		out.println("alert(' "+alertMsg+" ')")
+		out.println("</script>");
+	}
+}
+
+
+jsp 내장 객체 response request 같은 경우
+HttpServletRequest 객체임
