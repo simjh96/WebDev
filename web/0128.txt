@@ -1,0 +1,8 @@
+type = "hidden"으로 보내면 안보임
+		  	<form method="POST" action="delete_process.jsp" id="join" class="form">
+		  		<input type="hidden" name="user_id" value="<%=user_id%>">
+		  		<div class="btns">
+		  			<button type="submit" class="btn btnConfirm">회원탈퇴</button>
+
+sql developer에서 insert 한 내용들은
+	주로 commit이 안되어서 서버에서 조회해도 안나옴
