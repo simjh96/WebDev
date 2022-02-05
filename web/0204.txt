@@ -1,0 +1,33 @@
+prefix를 c 로 잡으면 <c: 가 되고
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+이걸로 format 잡는것도 있음
+
+
+scriptlets 이제 안씀 ㅋㅋㅋㅋ
+The use of scriptlets (those <% %> things) in JSP is indeed highly discouraged since the birth of taglibs (like JSTL) and EL (Expression Language, those ${} things) way back in 2001.
+
+scriptlets는 java 문법임
+	jsp 문법인 jstl을 사용하는게 권장됨
+	
+	el 또한 java 문법이 아니기에 내장 객체인 cookie session pageContext application 등만 접근 가능하고
+	java로 선언한건 접근 안됨
+
+
+원래 webapp에 기능들 다 구현해서
+	delete-process 식으로 다 구현 했는데
+
+	이제는 다 java에 model에
+		dto/ dao method들로 편입 시켜라
+
+		그리고
+		<% 
+		MemberDto memberDto = new MemberDto();
+		MemberDao memberDao = new MemberDao();
+		memberDto.setRequiredInfo(request);
+		result = memberDao.updateMember(memberDto);
+		 %>
+		로 일축
+
+		하나씩 먹여주던걸 이제는 Dto로 압축해서 먹여줌
+
+		주로 Dao를 init 하고 Dao.setDB(Dao.getDto()) 형식으로 진행됨
