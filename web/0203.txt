@@ -1,0 +1,31 @@
+jstl
+	일단 c tag 정보 가져와야함
+		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+	<c:forEach var="i" begin="1" end="10" step="2" varStatus="vS">
+		<p>${i}</p>
+		<p>${vS.count}</p>
+	</c:forEach>
+
+Expression Language
+	속성값 가져오기 위한 표현식
+
+	Map<String,Person> maps = new HashMap<>();
+	maps.put("ironman", new Person("아이언맨", 45));
+	maps.put("hulk", new Person("헐크", 50));
+
+	<c:set var="avengers" value="<%= maps%>"/>
+		이렇게 담아야 ${avengers} == <%=maps %> 가 된다
+
+forward
+	pageContext.forward("url")
+	또는 전체 과정 그대로(request와 response 그대로 찍먹)
+		RequestDispatcher rd = request.getRequestDispatcher("url");
+		rd.forward(request, response)
+
+
+DTO == bean
+DAO == Database Access Obj
+
+
+
