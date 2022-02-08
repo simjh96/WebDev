@@ -1,0 +1,29 @@
+servlet 에서 doGet doPost 있는데
+	get이나 post나 같은 요청으로 처리하겠다 하면 service 라는 method 사용
+
+mvc
+	controller에서 dispatcher 가 핵심
+		controller를 넣는 경우 view 안에 <% %> 안넣어도 됨
+		servlet에서 다 처리해서 forward(response, request) 넣어서 view에 전달할거야
+
+		또한 forward로 부르는 경우 내부 변수까지 그대로 가져가서 clockDto 그대로 사용하면 됨
+
+multipartRequest가 서버 경로에 로컬 파일 올려줌
+
+
+
+File dir = new File(realPath);
+if (!dir.exists()) { dir.mkdir(); }
+
+
+ajax {type: json} 으로 안해주면 html로 읽힘
+	jsp 딴에서 <%@ page ... contentType="application/json" %> 으로 보내면 굳이 안그래도 됨
+
+
+multipartrequest
+	그냥 가져와 짐
+	promise 없음
+	
+
+parameter와 attribute 차이
+	애초에 attribute는 서버에서만 다룸
