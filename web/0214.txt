@@ -1,0 +1,27 @@
+jsp 바로 호출 못하게 하는법
+	web-inf 안에 집어넣기
+
+mybatis
+	dao 안에 쿼리를 외부 파일로 빼놓는것
+	
+<typeAliases>
+<typeAlias type="com.jjang051.model.MemberDto" alias="MemberDto" />
+</typeAliases>
+
+java에 static 하게 variable을 init 하고 싶으면(declare 아님;;)
+	static { ~~~ 하면 됨 }
+
+
+MemberDao:
+	SqlSession sqlSession = MyBatisConnectionFactory.getSqlSession();
+		MyBatisConnectionFactory:
+			sqlSessionFactory = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream("/config.xml"))
+				config.xml:
+					db.properties(login infos)
+					mapper(sql mapped by id)
+						MemberMapper.xml:
+							id와 sql을 mapping함
+							
+	
+
+	
