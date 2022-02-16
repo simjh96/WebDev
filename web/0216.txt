@@ -69,3 +69,5 @@ EL(expression language)
 		jsp는 언제 컴파일 되지?
 		servlet과 동일한거니까 servlet 컴파일 될때 같이 될것 같은데
 	request 들어올때 기준으로 변수 다 들어온 상탠데 $, # 기준이 뭘까
+
+	아하! The EL supports both immediate and deferred evaluation of expressions. Immediate evaluation means that the expression is evaluated and the result returned as soon as the page is first rendered. Deferred evaluation means that the technology using the expression language can use its own machinery to evaluate the expression sometime later during the page's lifecycle, whenever it is appropriate to do so.
