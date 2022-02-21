@@ -1,0 +1,48 @@
+Spring
+	FrontController(넘어오는 url을 전부 처리)
+		@WebServlet("*.do")
+		public class FrontController extends HttpServlet {
+			protected void service(HttpServletRequest request, HttpServletResponse response)...
+		}
+	
+	HandlerMapping {
+		# command 에 실려 넘어오는 주소를 controller에 매핑
+		private HashMap<String, AbstractController>();
+		public HandlerMapping() {
+			mappings = new ...
+			mappings.put(uri1, new BoardListController1());
+			mappings.put(uri2, new BoardListController2());
+			mappings.put(uri3, new BoardListController3());
+		}
+	}
+
+
+	ViewResolver
+		private String prefix
+		private String suffix
+		public String getViewPage(String nextPage) {
+			return prefix + nextPage + suffix
+			# nextPage 는 주로 requestUri - requestContextPath
+		}
+	
+	ModelAndView
+		데이터를 실어서 다음 페이지로 연결
+		private String nextPage;
+		private Map<String, Object> model = new HashMap<>();
+		public void addObject(String key, Object object) {
+			model.put(key, object)
+		}
+	# mav = mappings.getController(command).requestHandler(request, response)
+	# request나 session 대신 쓰는 느낌
+	# getNextPage == forward
+
+	DispatcherServlet
+
+
+url = http:// ... /BoardList.do
+uri = /projectName/ ... /BoardList.do
+context = /projectName
+command = uri - context
+
+
+POJO = plain old java object

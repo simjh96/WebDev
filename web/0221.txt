@@ -1,0 +1,113 @@
+dynamic web proj -> config -> convert to maven proj -> pom.xml
+web-inf/config -> root-context.xml + sublet-context.xml
+
+root-contents == spring container에 띄우기 위한 것들을 정의 하는 것
+	root-context.xml 에 schema 정의
+	프로젝트에 필요한 beans 정의
+		<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2002/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	scan 한 패키지 내부의 클래스 중 controller annotation을 지니고 있는 class를 controller로 로딩시키기
+		controller 안에 business logic 이 들어감
+		view file을 string 으로 return 함
+	
+	view resolver는 spring에서 이미 다 정의 되어 있음
+
+servlet-context.xml
+	spring mvc 관련된거 setting
+
+
+web.xml
+	Spring Config 랑 대응됨
+	web에서 쓸거 다 import
+		mvc 설정을 위한 servlet-context.xml
+		bean을 정의할 root-context.xml
+		listener
+		한글 깨지지 않게 filter
+	현재 web application에서 받아들이는 모든 요청에 대해서 ServletAppContext라는 이름으로 정의 되어 있는 servlet을 사용한다(servlet-mapping)
+
+
+pom.xml
+	pom.xml == 프로젝트 관 파일들 다운로드 받는곳
+		당장 안써서 지움
+	</build> 아래로
+		properites
+			<groupId-version> -> ${groupId-version}
+		dependencies
+			dependency: spring mvc 5.2.19 + javaservlet 4.0.1 + jsp 2.3.3 + servlet.jstl 1.2
+
+	.xsd 받는건 https 로
+
+	xmlNameSpace 불러오고 나면 자동 완성 가능해짐
+
+Controller 구조
+	@~Mapping("url")
+	public String page01() {
+		return "jsp name"
+	}
+
+
+SpringConfig extends AbstractAnnotationConfigDispatcherServletInitializer
+
+@Configuration
+@EnableWebMvc
+@ComponentScan("com.jjang051.controller")
+ServletAppContext implements WebMvcConfigurer 
+
+
+maven dependencies 
+	다 들어 왔는지 확인
+
+pom과 java main 파일은 두고두고 씀
+
+update maven project -> off line, force
+
+
+
+
+
+xml로 spring mvc
+	root-context(./config)
+		beans ns
+	servlet-context(./config)
+		beans:beans ns
+		annotation-driven(controller loading)
+		context:component-scan
+		beans:bean(view resolver; prefix suffix)
+			beans:property
+		resources(정적 파일 세팅)
+	web(./)
+		servlet mapping(uri mapping)
+		servlet(config servlet)
+			servlet-class
+			init-param
+				param-value(/WEB-INF/config/servlet-context.xml)
+		context-param(config bean)
+			param-value(/WEB-INF/config/foot-context.xml)
+		listener
+		filter
+
+
+java로 spring mvc
+	RootAppContext
+	ServletAppContext implements WebMvcConfigurer
+		configureViewResolvers(ViewResolverRegistry registry) {   (view resolver 처리)
+			WebMvcConfigurer.super.configureViewResolvers(registry);
+			registry.jsp("/WEB-INF/views/".".jsp")
+		}
+		addResourceHandlers(ResourceHandlerRegistry registry) {   (정적 파일 찾기)
+			WebMvcConfigurer.super.addResourceHandlers(registry);   (interface에서 class에 직접 접근해 쓰는 default method는 interface.super.defaultMethod() 이런식으로 접근함(다중상속으로 같은 이름이 있을 수도 있음으로, .super라는 예약어가 존재))
+			registry.addResourceHandler("/**").addResourceLocations("/resources/");
+		}
+	SpringConfig extends AbstractAnnotationConfigDispatcherServletInitializer   (dispatcher인데 annotation으로 config 됨)
+		protected Class<?>[] getRootConfigClasses() {   (beans 정의를 위한 class)
+			return new Class[] {RootAppContext.class};   (SomeClass.class gets the Class<SomeClass> type which you can use for programming using the reflection API; get access to static variables)
+		}
+		protected Class<?>[] getServletConfigClasses() {   (servlet 정의를 위한 class)
+			return new Class[] {ServletAppContext.class};
+		}
+		protected Filter[]  getServletFilters() {
+			CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
+			encodingFilter.setEncoding("UTF-8");
+			return new Filter[] {encodingFilter};
+		}
+		
