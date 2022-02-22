@@ -1,0 +1,49 @@
+data 받을때
+
+1. 이름으로 받는법
+HttpServletRequest 로 받을 수 있음(서블릿에서 자동으로 내장 객체 만들어주니까 알아서 받아 올 수 있음)
+(@RequestParam(value="data01") int data01) 로도 받을 수 있음(spring에서 제공해줌)
+	근데 이름 같게 쓰면 그냥 (int data01)로 annotation 생략하고 받으면 됨
+	@RequestParam(required = false) 
+	@RequestParam(defaultValue = "0") 
+		기본적으로 str으로 받아야함
+		주로 null 값은 javascript로 거르고 보냄
+
+
+2. path 받는법
+@GetMapping("/parameter/{data01}/{data02}/{data03}")
+public String parameter06(@PathVariable int data01, @PathVariable int data02, @PathVariable int data03) {
+	REST api 할때 쓰는 구조
+	ex) themoviedb.org/tv/123-lucifer/season/6?
+
+
+3. 자동 mapping 으로 받는법
+	실제로는 Model model 이 기본임
+		ModelAttribute를 사용하면 Model.addAttribute 하듯이 내가 원하는 Dto 객체를 model에 자동으로 삽입 가능
+
+@RequestParam Map<String, String> map
+	으로 받아서 map.get("data1") 으로도 사용 가능
+
+@ModelAttribute DataDto dataDto 으로 attribute 값을 자동 setting 해서
+	바로 controller 안에서 사용 가능
+	심지어 attribute 이름이 모두 대응 된다면
+		annotation 생략하고 그냥 DataDto dataDto 써도 됨
+		대응 안되는건 null로 들어옴
+	request 안에 실려 가는거여서
+		${attribute} 쓰면 안되고
+		${dataDto.attribute} 써야함
+			근데 변수명이 아니라 type의 camel case로 써야함
+
+
+viewResolver
+	request.setAttribute("msg", "msg입니다");
+	return "test02";
+		jsp에 request 그대로 forward 되어서 ${msg} 쓸 수 있음
+
+	근데 spring에서 제공하는 Model.addAttribute("msg","model message") 를 사용해도 됨
+		${requestScope.msg}
+			model에 담아도 request 에 실려 넘어감
+				Model == request with validation
+		예전에는 ModelAndView 쓰긴했음, 이건 setViewName 하고 mav를 return 했음
+
+
