@@ -1,0 +1,23 @@
+String 으로 viewResolve 할때 ":" keyword 있음
+	forward:/member/List.do 이나 redirect:다른 url 사용 가능
+		.jsp 안붙힘 이 경우는
+
+mybatis + mybatis spring
+
+
+properties>web project setting>context 위치는 수동으로 바꿔줘야함, 아니면 Servers>server.xml 마지막 context 줄 바꿔줘
+
+@ComponentScan("package model")
+	그리고 사용할 dto 안에 @Component 라고 붙여줘야함
+	spring container에 담아두고 produce 함
+	Controller 안에서
+		@Autowired
+		DataDto dataDto; 로 선언 없이 바로 사용 가능
+
+스캔 안하고
+	RootAppContext 또는 ServletAppContext 에 
+	@Bean
+	public DataDto dataDto() {
+		return new DataDto();
+	}
+	하고 @Autowire 해도 생성 됨
