@@ -21,3 +21,9 @@ properties>web project setting>context 위치는 수동으로 바꿔줘야함, �
 		return new DataDto();
 	}
 	하고 @Autowire 해도 생성 됨
+
+
+controller 에서 받아오는거는
+	request 밖에 없음
+	대신 @RequestParam 이나 @ModelAttribute 의 생략으로 받아 올 수 있음
+	Dto의 속성값과 같다면 ModelAttribute로 받는게 맞고 아닌경우에는 @RequestParam으로 받는것이 맞다

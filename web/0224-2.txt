@@ -1,0 +1,127 @@
+connection pool
+	connection 빌려줬다가 반납 받는 방식
+	공식: hikaricp(hikari connection pool) (spring batch 에서 씀)
+
+@Configuration
+@ComponentScan("com.jjang051.model")
+@MapperScan("com.jjang051.mybatis")
+public class RootAppContext {
+	
+	@Bean
+	public DataSource dataSource() {
+		HikariConfig hikariConfig = new HikariConfig();
+		hikariConfig.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+		hikariConfig.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:xe");
+		hikariConfig.setUsername("TIS002");
+		hikariConfig.setPassword("1234");
+		
+		HikariDataSource dataSource = new HikariDataSource(hikariConfig);
+		
+		return dataSource;
+	}
+	
+	@Bean
+	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception  {
+		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+		sqlSessionFactoryBean.setDataSource(dataSource);
+		PathMatchingResourcePatternResolver pathResolver =  new PathMatchingResourcePatternResolver();
+		sqlSessionFactoryBean.setConfigLocation(pathResolver.getResource("classpath:com/jjang051/mybatis/config.xml"));
+		
+		sqlSessionFactoryBean.setMapperLocations(pathResolver.getResources("classpath:com/jjang051/mybatis/*Mapper.xml"));
+		return (SqlSessionFactory)sqlSessionFactoryBean.getObject();
+	}
+	
+	@Bean
+	public PlatformTransactionManager transactionManager() {
+		return new DataSourceTransactionManager(dataSource());
+	}
+}
+	
+
+-> 이걸 Dao 에서 
+	@Autowired
+	public SqlSessionFactory sqlSessionFactory; 해서 씀
+
+
+mybatis 에서
+	config.xml allias 빼고 다 필요 없고
+	db.properties도 필요 x
+
+
+
+
+project lombok
+	C:\Users\USER\eclipse\jee-2021-12\eclipse 에 lombok 넣고
+	cmd 에서 
+		cd C:\Users\USER\eclipse\jee-2021-12\eclipse
+		java -jar lombok.jar
+
+		같은 주소의 eclipse.ini 파일에서 설치 여부 확인 가능함
+	설치 하고 maven 에 나열 해줘야함
+
+	annotation
+		Dto 에서
+		@Data
+			getter setter toString equals .. 등등 다 만들어줌
+
+		@Getter, AllArgsConstructor 같은것도 있음
+
+
+
+spring 관련 maven dependency 는 버전 다 맞춰야함
+
+componentScan -> java file scan
+MapperScan -> xml scan for mybatis
+
+
+
+json return 해주는 url 갖고 싶으면
+	viewResolve를 string return 이 아니라 map return 하면 알아서 해줌
+		@ResponseBody 달아줘야함
+	Gson이 더 편한데 spring 공식은 jackson 임
+		jackson databind 를 사용해서 스트리밍 서비스
+			jackson core, anno 등등 다 들고와줌
+	근데 그냥 jsp 로 만들어도 됨 ㅋㅋㅋ
+
+
+
+
+
+질문
+
+maven은 빌드 관리만 해주는건가?
+
+bean에 올라온 sqlSessionFactiory argument 도 안 넣어줬는데 실행이 되나??
+
+부모 자료형 식별자 저장공간에 들어갔다가 다시 원래로 형변환 해줄때 누락됐던 메소드들은 어디 저장 되어 있다 나오는걸까?
+	근데 당연히 있을법하긴해...
+
+=====================
+
+SpringConfig는 예약어인가? 제일 먼저 열리나?
+	AbstractAnnotationConfigDispatcherServletInitializer 상속 받는데 이게 initializer 여서 onStart lifecycle에서 자동 실행이 됨
+@EnableWebMvc 는 어떤 처리 해주는가?
+	그냥 webmvc 구조 자체를 쓰려면 이걸 적어줘야함
+
+registry는 정확히 어떤걸 처리 해 주는가?
+	외부 파일을 registry 라고 하는데 wordpress 같은거 쓰려면 여기에 등록 해야함
+
+왜 wildcard가 /** 인가?
+	spring wildcard는 3종류가 있는데 그중 하나다
+
+return (SqlSessionFactory)sqlSessionFactoryBean.getObject(); 이건 왜 형변환 해주는가?
+HikariDataSource dataSource = new HikariDataSource(hikariConfig); 이건 안해주면서
+	이유 없음, 상관없음
+
+근데 sqlSessionFactory는 함수인데 객체가 만들어지나???
+	spring reflection 이라는 개념
+
+
+
+
+이건 뭐지?
+	@Bean
+	public PlatformTransactionManager transactionManager() {
+		return new DataSourceTransactionManager(dataSource());
+	}
+	spring에서 transaction 관리 해주는것
