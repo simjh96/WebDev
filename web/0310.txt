@@ -1,0 +1,58 @@
+파일 업로드
+spring 에서는 apache commons + apache commons fileupload 사용
+	예전에는 cos 썼음
+
+browser에서 multipart protocal 로 stream 보내주면 그걸 받는형식
+
+view
+	<form class="form" action="InsertProcess.do" enctype="multipart/form-data" method="POST">
+Config
+	SpringConfig
+		Dynamic registration 내장 객체 받아서 -> void
+		registration.setMultipartConfig(MultipartConfigElement)
+			정도만 해주면 됨
+
+	ServletAppContext
+		@Bean
+		public StandardServletMultipartResolver multipartResolver() {
+			return new StandardServletMultipartResolver();
+		}
+		spring에서 multipart 데이터 사용 가능하도록 resolve 해주는 기능			
+	Controller
+		@RequestMapping("/InsertProcess.do")
+		public void insertProcessGallery(GalleryDto gDto, MultipartFile multipartFile)
+			FileUtils.copyInputStreamToFile(multipartFile.getInputStream(), File('wantedName'))
+			
+
+
+
+bean
+
+Component(Configuration>bean) 을 쓰는 구조
+
+company(address) 해야하는 경우
+
+@Component
+public class Company {
+    // this body is the same as before
+}
+
+@Configuration
+@ComponentScan(basePackageClasses = Company.class)
+public class Config {
+    @Bean
+    public Address getAddress() {
+        return new Address("High Street", 1000);
+    }
+}
+
+하면 inversion of control container 에서 
+	ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
+		이걸로 container 만들어줌
+
+		스프링은 기본적으로 모든 bean을 singleton으로 생성하여 관리한다
+			prototype으로 쓰려면 @Scope("prototype") 해줘야함
+
+
+
+
