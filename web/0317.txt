@@ -1,0 +1,34 @@
+모듈 = require(모듈 이름);
+모듈.method() 로 사용
+
+
+http = require("http");
+fs = require("fs");
+http
+	.createServer(async (req, res) => {
+		try {
+	const file = await fs.readFile("./server/main.html");
+	res.writeHead(200, {});
+	res.end(file)
+	}
+});
+
+
+middleware(Express에서만 사용)
+	req, res cycle에 끼어 들수 있는 함수
+		next를 써줘야 cycle이 계속됨
+
+ 	reqTime(req, res, next) { req.조작; next(); };
+	app.use(reqTime);
+	app.get(()=>{여기 안에서 자유롭게 사용 가능})
+
+	app.use(express.static())   # 이런것들도 다 middleware
+
+cors
+	npm i cors
+	const cors = require("cors");
+	app.use(cors());
+
+morgan
+	middleware logger
+	morgan(token)

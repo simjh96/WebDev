@@ -1,0 +1,61 @@
+help> install new software
+	http://emmet.io/eclipse/updates
+
+@ResponseBody 하면
+	return 값에 jsp 붙여질 string 말고 map 객체 return 해줌
+
+
+Web
+    
+
+[총정리]
+Controller
+   url mapping 되며 view로 redirect 하는 servlet
+   @WebServlet("/member/MemberInfo.do")
+      web url은 / 로 시작, 나머지는 /없이 시작
+      java file은 root가 java임, dir 칠때 여기서부터 시작(servlet도 컴파일 돼서 java 에 안착)
+      web 파일은 src/main/webapp이 시작
+   
+   1. 주로 form에서 post나 get으로 request 받음
+   2. Model의 객체를 이용해 DAO(Session(), queary)로 DTO 생성
+   3. request 에 setAttribute 해서 dispatcher.forward 해줌
+
+Model
+   dto, dao, mybatisConn 등 대부분 객체 여기서 정의
+   mybatis 에서
+      config(db.properties, typeAllias, mapper) 하고 
+         mapper.xml에 queary를 id로 받아서 매핑 해줌
+            input 받아서 paramType 으로 typecasting 해주고
+               defered el 을 이용해서 #{ 객체 안 변수 접근 가능 }
+            sql 결과를 row 하나당 resultType 하나로 반환해 준다
+               dto 에서 column 이름과 같은 field로 setter 해줌
+               row 여러개 나오면 sqlSession.selectList(id) 로 받아줘야함
+   MybatisConn
+      SqlSessionFactoryBuilder().build(Resources.getResourceAsStream(resource)) 로 세션 열어줌
+
+   DAO
+      Session 받아서 DTO 생성해서 반환해줌
+         List<Dto>로 줄 수 도 있음 <-> sqlSession.selectList(id)
+
+
+View
+   rendering 되는 jsp 화면
+   jstl/core, jstl/fmt 정도만 사용
+   js와 ajax 사용
+   el로 ${} 뚫어서 사용
+
+
+EL(expression language)
+   객체안에 내용 받아오는 문법
+   객체안에 변수들 바로 받아 볼 수 있음
+   ${} 하면 컴파일 전에 변수 넣을 수 있고
+   #{} 하면 컴파일 후에 변수 넣을 수 있음(그래서 string concat이 자동으로 안됨)
+
+근데 ${} 랑 #{} 랑 차이가 뭐지??
+뭐가 컴파일 될때 기준이지?
+   jsp가 컴파일 될때?
+      jsp는 언제 컴파일 되지?
+      servlet과 동일한거니까 servlet 컴파일 될때 같이 될것 같은데
+   request 들어올때 기준으로 변수 다 들어온 상탠데 $, # 기준이 뭘까
+
+   아하! The EL supports both immediate and deferred evaluation of expressions. Immediate evaluation means that the expression is evaluated and the result returned as soon as the page is first rendered. Deferred evaluation means that the technology using the expression language can use its own machinery to evaluate the expression sometime later during the page's lifecycle, whenever it is appropriate to do so.
