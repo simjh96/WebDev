@@ -1,0 +1,33 @@
+동적인것들은 새로 생기거나 지워지면 event listener 다시 추가해야할 수도 있다
+	그러면 늘 있는거에 listener 걸고 안에 bubbling 으로 event 위임 걸면 됨
+	$("body").on("click", ".calendar .dates li", function() {
+
+
+DTO 는 광범위 하게 다 받아주니까
+	그냥 json으로 일부 param 만 보내더라도 DTO 로 받아
+
+
+jquery animation 에서
+	마우스 뗄때 애니메이션 끝나게 하는게 바람직
+		.stop 사용
+		$(".calendarBox").stop().slideToggle(250);
+
+destructuring
+	curly braces inside js function param
+	foo({sth1, sth2})
+	=== (obj) => { var par1 = o.sth1, var par2 = o.sth2 }
+
+state
+	이건 <template> 랑 많이 쓰는데
+		template tag 합쳐서  <template>`${}`</template> 씀
+		https://stackoverflow.com/questions/56177575/react-store-state-to-template-literals
+<template>
+	`${state 받아서}
+	<a @click=${func1}>`
+</template>
+<script>
+	export default (props, { store 여기서 받아 }) => { const func1 = ()=>store.dispatch('action function 이름'); return render}
+</script>
+
+
+참고로 $변수 는 jq 변수임을 나타내기 위한것... $랑 _는 특수문자 말고 알파벳 취급됨
